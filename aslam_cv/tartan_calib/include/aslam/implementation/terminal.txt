@@ -1,0 +1,1007 @@
+-------------------------------------------------------
+Profile:                     default
+Extending:        [explicit] /opt/ros/melodic
+Workspace:                   /catkin_ws
+-------------------------------------------------------
+Build Space:        [exists] /catkin_ws/build
+Devel Space:        [exists] /catkin_ws/devel
+Install Space:      [unused] /catkin_ws/install
+Log Space:          [exists] /catkin_ws/logs
+Source Space:       [exists] /catkin_ws/src
+DESTDIR:            [unused] None
+-------------------------------------------------------
+Devel Space Layout:          linked
+Install Space Layout:        None
+-------------------------------------------------------
+Additional CMake Args:       -DCMAKE_BUILD_TYPE=Release
+Additional Make Args:        None
+Additional catkin Make Args: None
+Internal Make Job Server:    True
+Cache Job Environments:      False
+-------------------------------------------------------
+Whitelisted Packages:        None
+Blacklisted Packages:        None
+-------------------------------------------------------
+Workspace configuration appears valid.
+-------------------------------------------------------
+[build] Found '37' packages in 0.0 seconds.                                                         
+[build] Package table is up to date.                                                                
+Starting >>> aslam_time                                                                             
+Starting >>> catkin_simple                                                                          
+Starting >>> ethz_apriltag2                                                                         
+Starting >>> python_module                                                                          
+Starting >>> sm_common                                                                              
+Starting >>> sm_logging                                                                             
+Starting >>> sm_random                                                                              
+[build 0.2 s] [0/37 complete] [7/16 jobs] [6 queued] [aslam_time:loadenv - 0.1]                     Finished <<< catkin_simple                                 [ 0.1 seconds ]                          
+Starting >>> opencv2_catkin                                                                         
+Finished <<< aslam_time                                    [ 0.1 seconds ]                          
+[build 0.3 s] [2/37 complete] [6/16 jobs] [4 queued] [ethz_apriltag2:make - 0.1] [sm_random:load... Finished <<< ethz_apriltag2                                [ 0.2 seconds ]                          
+Finished <<< sm_random                                     [ 0.1 seconds ]                          
+[build 0.4 s] [4/37 complete] [4/16 jobs] [2 queued] [python_module:make - 0.1] [sm_common:loade... Finished <<< python_module                                 [ 0.1 seconds ]                          
+Starting >>> numpy_eigen                                                                            
+Finished <<< sm_common                                     [ 0.1 seconds ]                          
+Starting >>> sm_boost                                                                               
+Starting >>> sm_matrix_archive                                                                      
+Starting >>> sm_opencv                                                                              
+Starting >>> sm_property_tree                                                                       
+Starting >>> sm_eigen                                                                               
+Starting >>> sm_timing                                                                              
+[build 0.5 s] [6/37 complete] [9/16 jobs] [7 queued] [sm_logging:make - 0.1] [opencv2_catkin:loa... Finished <<< sm_logging                                    [ 0.1 seconds ]                          
+Finished <<< opencv2_catkin                                [ 0.1 seconds ]                          
+[build 0.6 s] [8/37 complete] [7/16 jobs] [5 queued] [numpy_eigen:check - 0.1] [sm_opencv:loaden... Finished <<< sm_opencv                                     [ 0.1 seconds ]                          
+[build 0.7 s] [9/37 complete] [7/16 jobs] [3 queued] [numpy_eigen:make - 0.2] [sm_boost:loadenv ... Finished <<< sm_eigen                                      [ 0.1 seconds ]                          
+Starting >>> sparse_block_matrix                                                                    
+Finished <<< sm_boost                                      [ 0.1 seconds ]                          
+Starting >>> sm_kinematics                                                                          
+[build 0.8 s] [11/37 complete] [7/16 jobs] [2 queued] [sm_timing:check - 0.1] [sm_property_tree:... Finished <<< sm_property_tree                              [ 0.1 seconds ]                          
+Finished <<< sm_timing                                     [ 0.1 seconds ]                          
+[build 0.9 s] [13/37 complete] [5/16 jobs] [0 queued] [sparse_block_matrix:check - 0.1] [sm_matr... Finished <<< sm_matrix_archive                             [ 0.1 seconds ]                          
+Finished <<< sparse_block_matrix                           [ 0.1 seconds ]                          
+Starting >>> aslam_backend                                                                          
+[build 1.0 s] [15/37 complete] [3/16 jobs] [0 queued] [numpy_eigen:make (50%) - 0.5] [sm_kinemat... Finished <<< sm_kinematics                                 [ 0.1 seconds ]                          
+Starting >>> aslam_cameras                                                                          
+Starting >>> bsplines                                                                               
+Finished <<< numpy_eigen                                   [ 0.5 seconds ]                          
+Starting >>> sm_python                                                                              
+Finished <<< aslam_backend                                 [ 0.1 seconds ]                          
+Starting >>> aslam_backend_expressions                                                              
+Starting >>> incremental_calibration                                                                
+[build 1.1 s] [18/37 complete] [5/16 jobs] [3 queued] [aslam_cameras:loadenv - 0.0] [bsplines:ma... Finished <<< bsplines                                      [ 0.1 seconds ]                          
+Starting >>> bsplines_python                                                                        
+[build 1.2 s] [19/37 complete] [5/16 jobs] [2 queued] [aslam_cameras:make - 0.1] [sm_python:make... Finished <<< aslam_cameras                                 [ 0.1 seconds ]                          
+Starting >>> aslam_imgproc                                                                          
+Finished <<< sm_python                                     [ 0.1 seconds ]                          
+Starting >>> aslam_cameras_april                                                                    
+[build 1.3 s] [21/37 complete] [5/16 jobs] [2 queued] [aslam_backend_expressions:make - 0.1] [bs... Finished <<< incremental_calibration                       [ 0.1 seconds ]                          
+Starting >>> incremental_calibration_python                                                         
+Finished <<< aslam_backend_expressions                     [ 0.2 seconds ]                          
+Starting >>> aslam_backend_python                                                                   
+Starting >>> aslam_cv_backend                                                                       
+Starting >>> aslam_splines                                                                          
+Finished <<< bsplines_python                               [ 0.1 seconds ]                          
+[build 1.4 s] [24/37 complete] [6/16 jobs] [4 queued] [aslam_imgproc:make - 0.1] [aslam_cameras_... Finished <<< aslam_imgproc                                 [ 0.1 seconds ]                          
+[build 1.5 s] [25/37 complete] [5/16 jobs] [2 queued] [aslam_cv_backend:loadenv - 0.0] [aslam_ca... Finished <<< aslam_cameras_april                           [ 0.2 seconds ]                          
+Starting >>> tartan_calib                                                                           
+Finished <<< incremental_calibration_python                [ 0.1 seconds ]                          
+Finished <<< aslam_cv_backend                              [ 0.1 seconds ]                          
+[build 1.6 s] [28/37 complete] [3/16 jobs] [1 queued] [aslam_backend_python:make - 0.1] [aslam_s... Finished <<< aslam_backend_python                          [ 0.1 seconds ]                          
+Finished <<< aslam_splines                                 [ 0.1 seconds ]                          
+Starting >>> aslam_cv_error_terms                                                                   
+Starting >>> aslam_splines_python                                                                   
+[build 1.7 s] [30/37 complete] [3/16 jobs] [1 queued] [tartan_calib:make - 0.1] [aslam_splines_p... Finished <<< tartan_calib                                  [ 0.1 seconds ]                          
+Starting >>> aslam_cv_serialization                                                                 
+[build 1.8 s] [31/37 complete] [3/16 jobs] [0 queued] [aslam_cv_error_terms:mkdir - 0.0] [aslam_... Finished <<< aslam_splines_python                          [ 0.1 seconds ]                          
+Finished <<< aslam_cv_error_terms                          [ 0.1 seconds ]                          
+[build 1.9 s] [33/37 complete] [1/16 jobs] [0 queued] [aslam_cv_serialization:make - 0.1]           Finished <<< aslam_cv_serialization                        [ 0.2 seconds ]                          
+Starting >>> aslam_cv_python                                                                        
+[build 2.0 s] [34/37 complete] [1/16 jobs] [0 queued] [aslam_cv_python:loadenv - 0.0]               [build 2.1 s] [34/37 complete] [1/16 jobs] [0 queued] [aslam_cv_python:make - 0.1]                  [build 2.2 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 0.2]            [build 2.3 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 0.3]            [build 2.4 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 0.4]            [build 2.5 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 0.5]            [build 2.6 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 0.6]            [build 2.7 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 0.7]            [build 2.8 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 0.8]            [build 2.9 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 0.9]            [build 3.0 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.0]            [build 3.1 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.1]            [build 3.2 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.2]            [build 3.3 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.3]            [build 3.4 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.4]            [build 3.5 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.5]            [build 3.6 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.6]            [build 3.7 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.7]            [build 3.8 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.8]            [build 3.9 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 1.9]            [build 4.0 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.0]            [build 4.1 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.1]            [build 4.2 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.2]            [build 4.3 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.3]            [build 4.4 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.4]            [build 4.5 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.5]            [build 4.6 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.6]            [build 4.7 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.7]            [build 4.8 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.8]            [build 4.9 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 2.9]            [build 5.0 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.0]            [build 5.1 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.1]            [build 5.2 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.2]            [build 5.3 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.3]            [build 5.4 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.4]            [build 5.5 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.5]            [build 5.6 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.6]            [build 5.7 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.7]            [build 5.8 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.8]            [build 5.9 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 3.9]            [build 6.0 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.0]            [build 6.1 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.1]            [build 6.2 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.2]            [build 6.3 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.3]            [build 6.4 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.4]            [build 6.5 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.5]            [build 6.6 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.6]            [build 6.7 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.7]            [build 6.8 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.8]            [build 6.9 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 4.9]            [build 7.0 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 5.0]            [build 7.1 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 5.1]            [build 7.2 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 5.2]            [build 7.3 s] [34/37 complete] [2/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 5.3]            [build 7.4 s] [34/37 complete] [1/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 5.4]            [build 7.5 s] [34/37 complete] [1/16 jobs] [0 queued] [aslam_cv_python:make (55%) - 5.5]            ____________________________________________________________________________________________________
+Errors << aslam_cv_python:make /catkin_ws/logs/aslam_cv_python/build.make.1360.log                  
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:32:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:42:11:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type; did you mean ?[01m[KIplImage[m[K??
+     const [01;31m[KImage[m[K<T>& image,
+           [01;31m[K^~~~~[m[K
+           [32m[KIplImage[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:42:16:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+     const Image[01;31m[K<[m[KT>& image,
+                [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In function ?[01m[Kbool vis::RefineFeatureBySymmetry(int, const std::vector<Eigen::Matrix<float, 2, 1> >&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:52:29:[m[K [01;31m[Kerror: [m[K?[01m[Kposition[m[K? was not declared in this scope
+   Vec2f original_position = [01;31m[Kposition[m[K;
+                             [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:52:29:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcoercion[m[K?
+   Vec2f original_position = [01;36m[Kposition[m[K;
+                             [01;36m[K^~~~~~~~[m[K
+                             [32m[Kcoercion[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:53:4:[m[K [01;31m[Kerror: [m[K?[01m[Kout_position[m[K? was not declared in this scope
+   *[01;31m[Kout_position[m[K = position;
+    [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:53:4:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koriginal_position[m[K?
+   *[01;36m[Kout_position[m[K = position;
+    [01;36m[K^~~~~~~~~~~~[m[K
+    [32m[Koriginal_position[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:59:32:[m[K [01;31m[Kerror: [m[K?[01m[Klocal_pattern_tr_pixel[m[K? was not declared in this scope
+     pattern_samples[i] = Vec3f([01;31m[Klocal_pattern_tr_pixel[m[K * (window_half_size * samples[i]).homogeneous()).hnormalized();
+                                [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:59:58:[m[K [01;31m[Kerror: [m[K?[01m[Kwindow_half_size[m[K? was not declared in this scope
+     pattern_samples[i] = Vec3f(local_pattern_tr_pixel * ([01;31m[Kwindow_half_size[m[K * samples[i]).homogeneous()).hnormalized();
+                                                          [01;31m[K^~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:32:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:1[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:42:11:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type
+     const [01;31m[KImage[m[K<T>& image,
+           [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:42:16:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+     const Image[01;31m[K<[m[KT>& image,
+                [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In function ?[01m[Kbool vis::RefineFeatureBySymmetry(int, const std::vector<Eigen::Matrix<float, 2, 1> >&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:52:29:[m[K [01;31m[Kerror: [m[K?[01m[Kposition[m[K? was not declared in this scope
+   Vec2f original_position = [01;31m[Kposition[m[K;
+                             [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:52:29:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcoercion[m[K?
+   Vec2f original_position = [01;36m[Kposition[m[K;
+                             [01;36m[K^~~~~~~~[m[K
+                             [32m[Kcoercion[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:53:4:[m[K [01;31m[Kerror: [m[K?[01m[Kout_position[m[K? was not declared in this scope
+   *[01;31m[Kout_position[m[K = position;
+    [01;31m[K^~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:53:4:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koriginal_position[m[K?
+   *[01;36m[Kout_position[m[K = position;
+    [01;36m[K^~~~~~~~~~~~[m[K
+    [32m[Koriginal_position[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:59:32:[m[K [01;31m[Kerror: [m[K?[01m[Klocal_pattern_tr_pixel[m[K? was not declared in this scope
+     pattern_samples[i] = Vec3f([01;31m[Klocal_pattern_tr_pixel[m[K * (window_half_size * samples[i]).homogeneous()).hnormalized();
+                                [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:64:36:[m[K [01;31m[Kerror: [m[K?[01m[Klocal_pixel_tr_pattern[m[K? was not declared in this scope
+   Mat3f pixel_tr_pattern_samples = [01;31m[Klocal_pixel_tr_pattern[m[K;
+                                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:59:58:[m[K [01;31m[Kerror: [m[K?[01m[Kwindow_half_size[m[K? was not declared in this scope
+     pattern_samples[i] = Vec3f(local_pattern_tr_pixel * ([01;31m[Kwindow_half_size[m[K * samples[i]).homogeneous()).hnormalized();
+                                                          [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:80:9:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+     LOG([01;31m[KINFO[m[K) << "Initial pixel_tr_pattern_samples:\n" << pixel_tr_pattern_samples;
+         [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:80:9:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+     LOG([01;36m[KINFO[m[K) << "Initial pixel_tr_pattern_samples:\n" << pixel_tr_pattern_samples;
+         [01;36m[K^~~~[m[K
+         [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:80:5:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+     [01;31m[KLOG[m[K(INFO) << "Initial pixel_tr_pattern_samples:\n" << pixel_tr_pattern_samples;
+     [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:80:5:[m[K [01;36m[Knote: [m[K(if you use ?[01m[K-fpermissive[m[K?, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:87:35:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+         pixel_tr_pattern_samples, [01;31m[Kimage[m[K, num_samples, pattern_samples,
+                                   [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:87:35:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+         pixel_tr_pattern_samples, [01;36m[Kimage[m[K, num_samples, pattern_samples,
+                                   [01;36m[K^~~~~[m[K
+                                   [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:64:36:[m[K [01;31m[Kerror: [m[K?[01m[Klocal_pixel_tr_pattern[m[K? was not declared in this scope
+   Mat3f pixel_tr_pattern_samples = [01;31m[Klocal_pixel_tr_pattern[m[K;
+                                    [01;31m[K^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:89:11:[m[K [01;31m[Kerror: [m[K?[01m[Kdebug[m[K? was not declared in this scope
+       if ([01;31m[Kdebug[m[K || kDebug) {
+           [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:89:11:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KkDebug[m[K?
+       if ([01;36m[Kdebug[m[K || kDebug) {
+           [01;36m[K^~~~~[m[K
+           [32m[KkDebug[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:90:13:[m[K [01;31m[Kerror: [m[K?[01m[KWARNING[m[K? was not declared in this scope
+         LOG([01;31m[KWARNING[m[K) << "Corner refinement failed because a sample was outside the image";
+             [01;31m[K^~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:90:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(WARNING) << "Corner refinement failed because a sample was outside the image";
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:95:11:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+       LOG([01;31m[KINFO[m[K) << "cost: " << cost;
+           [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:95:11:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+       LOG([01;36m[KINFO[m[K) << "cost: " << cost;
+           [01;36m[K^~~~[m[K
+           [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:95:7:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+       [01;31m[KLOG[m[K(INFO) << "cost: " << cost;
+       [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:97:9:[m[K [01;31m[Kerror: [m[K?[01m[Kfinal_cost[m[K? was not declared in this scope
+     if ([01;31m[Kfinal_cost[m[K) {
+         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:97:9:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Ksincosq[m[K?
+     if ([01;36m[Kfinal_cost[m[K) {
+         [01;36m[K^~~~~~~~~~[m[K
+         [32m[Ksincosq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:80:9:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+     LOG([01;31m[KINFO[m[K) << "Initial pixel_tr_pattern_samples:\n" << pixel_tr_pattern_samples;
+         [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:80:9:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+     LOG([01;36m[KINFO[m[K) << "Initial pixel_tr_pattern_samples:\n" << pixel_tr_pattern_samples;
+         [01;36m[K^~~~[m[K
+         [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:80:5:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+     [01;31m[KLOG[m[K(INFO) << "Initial pixel_tr_pattern_samples:\n" << pixel_tr_pattern_samples;
+     [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:80:5:[m[K [01;36m[Knote: [m[K(if you use ?[01m[K-fpermissive[m[K?, G++ will accept your code, but allowing the use of an undeclared name is deprecated)
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:87:35:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+         pixel_tr_pattern_samples, [01;31m[Kimage[m[K, num_samples, pattern_samples,
+                                   [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:87:35:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+         pixel_tr_pattern_samples, [01;36m[Kimage[m[K, num_samples, pattern_samples,
+                                   [01;36m[K^~~~~[m[K
+                                   [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:89:11:[m[K [01;31m[Kerror: [m[K?[01m[Kdebug[m[K? was not declared in this scope
+       if ([01;31m[Kdebug[m[K || kDebug) {
+           [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:89:11:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KkDebug[m[K?
+       if ([01;36m[Kdebug[m[K || kDebug) {
+           [01;36m[K^~~~~[m[K
+           [32m[KkDebug[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:90:13:[m[K [01;31m[Kerror: [m[K?[01m[KWARNING[m[K? was not declared in this scope
+         LOG([01;31m[KWARNING[m[K) << "Corner refinement failed because a sample was outside the image";
+             [01;31m[K^~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:90:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(WARNING) << "Corner refinement failed because a sample was outside the image";
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:95:11:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+       LOG([01;31m[KINFO[m[K) << "cost: " << cost;
+           [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:95:11:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+       LOG([01;36m[KINFO[m[K) << "cost: " << cost;
+           [01;36m[K^~~~[m[K
+           [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:95:7:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+       [01;31m[KLOG[m[K(INFO) << "cost: " << cost;
+       [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:97:9:[m[K [01;31m[Kerror: [m[K?[01m[Kfinal_cost[m[K? was not declared in this scope
+     if ([01;31m[Kfinal_cost[m[K) {
+         [01;31m[K^~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:97:9:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Ksincosq[m[K?
+     if ([01;36m[Kfinal_cost[m[K) {
+         [01;36m[K^~~~~~~~~~[m[K
+         [32m[Ksincosq[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:32:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:120:13:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+         LOG([01;31m[KINFO[m[K) << "  x in LM iteration " << lm_iteration << ": " << x.transpose();
+             [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:120:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+         LOG([01;36m[KINFO[m[K) << "  x in LM iteration " << lm_iteration << ": " << x.transpose();
+             [01;36m[K^~~~[m[K
+             [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:120:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(INFO) << "  x in LM iteration " << lm_iteration << ": " << x.transpose();
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:135:85:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (!CostFunction::ComputeCornerRefinementCost(test_pixel_tr_pattern_samples, [01;31m[Kimage[m[K, num_samples, pattern_samples, &test_cost)) {
+                                                                                     [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:135:85:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (!CostFunction::ComputeCornerRefinementCost(test_pixel_tr_pattern_samples, [01;36m[Kimage[m[K, num_samples, pattern_samples, &test_cost)) {
+                                                                                     [01;36m[K^~~~~[m[K
+                                                                                     [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:137:15:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+           LOG([01;31m[KINFO[m[K) << "  CostFunction::ComputeCornerRefinementCost() failed, aborting.";
+               [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:137:15:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+           LOG([01;36m[KINFO[m[K) << "  CostFunction::ComputeCornerRefinementCost() failed, aborting.";
+               [01;36m[K^~~~[m[K
+               [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:137:11:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+           [01;31m[KLOG[m[K(INFO) << "  CostFunction::ComputeCornerRefinementCost() failed, aborting.";
+           [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:143:13:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+         LOG([01;31m[KINFO[m[K) << "  test_cost: " << test_cost << ", cost: " << cost;
+             [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:143:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+         LOG([01;36m[KINFO[m[K) << "  test_cost: " << test_cost << ", cost: " << cost;
+             [01;36m[K^~~~[m[K
+             [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:143:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(INFO) << "  test_cost: " << test_cost << ", cost: " << cost;
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:147:13:[m[K [01;31m[Kerror: [m[K?[01m[Kfinal_cost[m[K? was not declared in this scope
+         if ([01;31m[Kfinal_cost[m[K) {
+             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:147:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Ktest_cost[m[K?
+         if ([01;36m[Kfinal_cost[m[K) {
+             [01;36m[K^~~~~~~~~~[m[K
+             [32m[Ktest_cost[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:167:13:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+         LOG([01;31m[KINFO[m[K) << "New position: " << out_position->transpose();
+             [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:167:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+         LOG([01;36m[KINFO[m[K) << "New position: " << out_position->transpose();
+             [01;36m[K^~~~[m[K
+             [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:167:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(INFO) << "New position: " << out_position->transpose();
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:172:13:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+         LOG([01;31m[KINFO[m[K) << "Cannot find an update to improve the cost. Returning convergence (iteration " << iteration << ").";
+             [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:172:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+         LOG([01;36m[KINFO[m[K) << "Cannot find an update to improve the cost. Returning convergence (iteration " << iteration << ").";
+             [01;36m[K^~~~[m[K
+             [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:172:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(INFO) << "Cannot find an update to improve the cost. Returning convergence (iteration " << iteration << ").";
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:178:60:[m[K [01;31m[Kerror: [m[K?[01m[Kwindow_half_size[m[K? was not declared in this scope
+     if (fabs(original_position.x() - out_position->x()) >= [01;31m[Kwindow_half_size[m[K ||
+                                                            [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:182:11:[m[K [01;31m[Kerror: [m[K?[01m[Kdebug[m[K? was not declared in this scope
+       if ([01;31m[Kdebug[m[K || kDebug) {
+           [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:182:11:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KkDebug[m[K?
+       if ([01;36m[Kdebug[m[K || kDebug) {
+           [01;36m[K^~~~~[m[K
+           [32m[KkDebug[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:183:13:[m[K [01;31m[Kerror: [m[K?[01m[KWARNING[m[K? was not declared in this scope
+         LOG([01;31m[KWARNING[m[K) << "Corner refinement failed because the refined position left the original window";
+             [01;31m[K^~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:32:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:1[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:120:13:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+         LOG([01;31m[KINFO[m[K) << "  x in LM iteration " << lm_iteration << ": " << x.transpose();
+             [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:183:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(WARNING) << "Corner refinement failed because the refined position left the original window";
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:200:11:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+       LOG([01;31m[KINFO[m[K) << "Number of iterations exceeded, but last update was tiny. Returning convergence.";
+           [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:200:11:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+       LOG([01;36m[KINFO[m[K) << "Number of iterations exceeded, but last update was tiny. Returning convergence.";
+           [01;36m[K^~~~[m[K
+           [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:200:7:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+       [01;31m[KLOG[m[K(INFO) << "Number of iterations exceeded, but last update was tiny. Returning convergence.";
+       [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:206:7:[m[K [01;31m[Kerror: [m[K?[01m[Kdebug[m[K? was not declared in this scope
+   if ([01;31m[Kdebug[m[K || kDebug) {
+       [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:120:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+         LOG([01;36m[KINFO[m[K) << "  x in LM iteration " << lm_iteration << ": " << x.transpose();
+             [01;36m[K^~~~[m[K
+             [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:120:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(INFO) << "  x in LM iteration " << lm_iteration << ": " << x.transpose();
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:135:85:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (!CostFunction::ComputeCornerRefinementCost(test_pixel_tr_pattern_samples, [01;31m[Kimage[m[K, num_samples, pattern_samples, &test_cost)) {
+                                                                                     [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:206:7:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KkDebug[m[K?
+   if ([01;36m[Kdebug[m[K || kDebug) {
+       [01;36m[K^~~~~[m[K
+       [32m[KkDebug[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:207:9:[m[K [01;31m[Kerror: [m[K?[01m[KWARNING[m[K? was not declared in this scope
+     LOG([01;31m[KWARNING[m[K) << "Corner refinement failed because the optimization did not converge. last_step_squared_norm: " << last_step_squared_norm;
+         [01;31m[K^~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:135:85:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (!CostFunction::ComputeCornerRefinementCost(test_pixel_tr_pattern_samples, [01;36m[Kimage[m[K, num_samples, pattern_samples, &test_cost)) {
+                                                                                     [01;36m[K^~~~~[m[K
+                                                                                     [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:137:15:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+           LOG([01;31m[KINFO[m[K) << "  CostFunction::ComputeCornerRefinementCost() failed, aborting.";
+               [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:207:5:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+     [01;31m[KLOG[m[K(WARNING) << "Corner refinement failed because the optimization did not converge. last_step_squared_norm: " << last_step_squared_norm;
+     [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:137:15:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+           LOG([01;36m[KINFO[m[K) << "  CostFunction::ComputeCornerRefinementCost() failed, aborting.";
+               [01;36m[K^~~~[m[K
+               [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:137:11:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+           [01;31m[KLOG[m[K(INFO) << "  CostFunction::ComputeCornerRefinementCost() failed, aborting.";
+           [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:143:13:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+         LOG([01;31m[KINFO[m[K) << "  test_cost: " << test_cost << ", cost: " << cost;
+             [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:143:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+         LOG([01;36m[KINFO[m[K) << "  test_cost: " << test_cost << ", cost: " << cost;
+             [01;36m[K^~~~[m[K
+             [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:143:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(INFO) << "  test_cost: " << test_cost << ", cost: " << cost;
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:147:13:[m[K [01;31m[Kerror: [m[K?[01m[Kfinal_cost[m[K? was not declared in this scope
+         if ([01;31m[Kfinal_cost[m[K) {
+             [01;31m[K^~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:147:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Ktest_cost[m[K?
+         if ([01;36m[Kfinal_cost[m[K) {
+             [01;36m[K^~~~~~~~~~[m[K
+             [32m[Ktest_cost[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:167:13:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+         LOG([01;31m[KINFO[m[K) << "New position: " << out_position->transpose();
+             [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:167:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+         LOG([01;36m[KINFO[m[K) << "New position: " << out_position->transpose();
+             [01;36m[K^~~~[m[K
+             [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:167:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(INFO) << "New position: " << out_position->transpose();
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:172:13:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+         LOG([01;31m[KINFO[m[K) << "Cannot find an update to improve the cost. Returning convergence (iteration " << iteration << ").";
+             [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:172:13:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+         LOG([01;36m[KINFO[m[K) << "Cannot find an update to improve the cost. Returning convergence (iteration " << iteration << ").";
+             [01;36m[K^~~~[m[K
+             [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:172:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(INFO) << "Cannot find an update to improve the cost. Returning convergence (iteration " << iteration << ").";
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:178:60:[m[K [01;31m[Kerror: [m[K?[01m[Kwindow_half_size[m[K? was not declared in this scope
+     if (fabs(original_position.x() - out_position->x()) >= [01;31m[Kwindow_half_size[m[K ||
+                                                            [01;31m[K^~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:182:11:[m[K [01;31m[Kerror: [m[K?[01m[Kdebug[m[K? was not declared in this scope
+       if ([01;31m[Kdebug[m[K || kDebug) {
+           [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:182:11:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KkDebug[m[K?
+       if ([01;36m[Kdebug[m[K || kDebug) {
+           [01;36m[K^~~~~[m[K
+           [32m[KkDebug[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:183:13:[m[K [01;31m[Kerror: [m[K?[01m[KWARNING[m[K? was not declared in this scope
+         LOG([01;31m[KWARNING[m[K) << "Corner refinement failed because the refined position left the original window";
+             [01;31m[K^~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:183:9:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+         [01;31m[KLOG[m[K(WARNING) << "Corner refinement failed because the refined position left the original window";
+         [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:200:11:[m[K [01;31m[Kerror: [m[K?[01m[KINFO[m[K? was not declared in this scope
+       LOG([01;31m[KINFO[m[K) << "Number of iterations exceeded, but last update was tiny. Returning convergence.";
+           [01;31m[K^~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:200:11:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KSM_INFO[m[K?
+       LOG([01;36m[KINFO[m[K) << "Number of iterations exceeded, but last update was tiny. Returning convergence.";
+           [01;36m[K^~~~[m[K
+           [32m[KSM_INFO[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:200:7:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+       [01;31m[KLOG[m[K(INFO) << "Number of iterations exceeded, but last update was tiny. Returning convergence.";
+       [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:206:7:[m[K [01;31m[Kerror: [m[K?[01m[Kdebug[m[K? was not declared in this scope
+   if ([01;31m[Kdebug[m[K || kDebug) {
+       [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:206:7:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[KkDebug[m[K?
+   if ([01;36m[Kdebug[m[K || kDebug) {
+       [01;36m[K^~~~~[m[K
+       [32m[KkDebug[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:207:9:[m[K [01;31m[Kerror: [m[K?[01m[KWARNING[m[K? was not declared in this scope
+     LOG([01;31m[KWARNING[m[K) << "Corner refinement failed because the optimization did not converge. last_step_squared_norm: " << last_step_squared_norm;
+         [01;31m[K^~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:207:5:[m[K [01;31m[Kerror: [m[Kthere are no arguments to ?[01m[KLOG[m[K? that depend on a template parameter, so a declaration of ?[01m[KLOG[m[K? must be available [[01;31m[K-fpermissive[m[K]
+     [01;31m[KLOG[m[K(WARNING) << "Corner refinement failed because the optimization did not converge. last_step_squared_norm: " << last_step_squared_norm;
+     [01;31m[K^~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K At global scope:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:218:13:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type; did you mean ?[01m[KIplImage[m[K??
+       const [01;31m[KImage[m[K<T>& image,
+             [01;31m[K^~~~~[m[K
+             [32m[KIplImage[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:218:18:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+       const Image[01;31m[K<[m[KT>& image,
+                  [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:254:13:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type; did you mean ?[01m[KIplImage[m[K??
+       const [01;31m[KImage[m[K<T>& image,
+             [01;31m[K^~~~~[m[K
+             [32m[KIplImage[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:254:18:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+       const Image[01;31m[K<[m[KT>& image,
+                  [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In static member function ?[01m[Kstatic bool vis::SymmetryCostFunction_GradientsXY::ComputeCornerRefinementCost(const Mat3f&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:222:6:[m[K [01;31m[Kerror: [m[K?[01m[Kout_cost[m[K? was not declared in this scope
+     *[01;31m[Kout_cost[m[K = 0;
+      [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:222:6:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koptopt[m[K?
+     *[01;36m[Kout_cost[m[K = 0;
+      [01;36m[K^~~~~~~~[m[K
+      [32m[Koptopt[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:223:25:[m[K [01;31m[Kerror: [m[K?[01m[Knum_samples[m[K? was not declared in this scope
+     for (int i = 0; i < [01;31m[Knum_samples[m[K; ++ i) {
+                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:224:29:[m[K [01;31m[Kerror: [m[K?[01m[Kpattern_samples[m[K? was not declared in this scope
+       const Vec2f& sample = [01;31m[Kpattern_samples[m[K[i];
+                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:228:12:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (![01;31m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:228:12:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (![01;36m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;36m[K^~~~~[m[K
+            [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:233:27:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       Vec2f intensity_a = [01;31m[Kimage[m[K.InterpolateBilinear(sample_pos);
+                           [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:233:27:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       Vec2f intensity_a = [01;36m[Kimage[m[K.InterpolateBilinear(sample_pos);
+                           [01;36m[K^~~~~[m[K
+                           [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K At global scope:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:218:13:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type
+       const [01;31m[KImage[m[K<T>& image,
+             [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:218:18:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+       const Image[01;31m[K<[m[KT>& image,
+                  [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:254:13:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type
+       const [01;31m[KImage[m[K<T>& image,
+             [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:254:18:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+       const Image[01;31m[K<[m[KT>& image,
+                  [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In static member function ?[01m[Kstatic bool vis::SymmetryCostFunction_GradientsXY::ComputeCornerRefinementCost(const Mat3f&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:222:6:[m[K [01;31m[Kerror: [m[K?[01m[Kout_cost[m[K? was not declared in this scope
+     *[01;31m[Kout_cost[m[K = 0;
+      [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:222:6:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koptopt[m[K?
+     *[01;36m[Kout_cost[m[K = 0;
+      [01;36m[K^~~~~~~~[m[K
+      [32m[Koptopt[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:223:25:[m[K [01;31m[Kerror: [m[K?[01m[Knum_samples[m[K? was not declared in this scope
+     for (int i = 0; i < [01;31m[Knum_samples[m[K; ++ i) {
+                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:224:29:[m[K [01;31m[Kerror: [m[K?[01m[Kpattern_samples[m[K? was not declared in this scope
+       const Vec2f& sample = [01;31m[Kpattern_samples[m[K[i];
+                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In static member function ?[01m[Kstatic bool vis::SymmetryCostFunction_GradientsXY::ComputeCornerRefinementCostAndJacobian(const Mat3f&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:260:5:[m[K [01;31m[Kerror: [m[K?[01m[KH[m[K? was not declared in this scope
+     [01;31m[KH[m[K->triangularView<Eigen::Upper>().setZero();
+     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:260:37:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+     H->triangularView<Eigen::Upper>([01;31m[K)[m[K.setZero();
+                                     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:261:5:[m[K [01;31m[Kerror: [m[K?[01m[Kb[m[K? was not declared in this scope
+     [01;31m[Kb[m[K->setZero();
+     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:262:6:[m[K [01;31m[Kerror: [m[K?[01m[Kout_cost[m[K? was not declared in this scope
+     *[01;31m[Kout_cost[m[K = 0;
+      [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:262:6:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koptopt[m[K?
+     *[01;36m[Kout_cost[m[K = 0;
+      [01;36m[K^~~~~~~~[m[K
+      [32m[Koptopt[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:264:25:[m[K [01;31m[Kerror: [m[K?[01m[Knum_samples[m[K? was not declared in this scope
+     for (int i = 0; i < [01;31m[Knum_samples[m[K; ++ i) {
+                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:228:12:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (![01;31m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:228:12:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (![01;36m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;36m[K^~~~~[m[K
+            [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:233:27:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       Vec2f intensity_a = [01;31m[Kimage[m[K.InterpolateBilinear(sample_pos);
+                           [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:265:29:[m[K [01;31m[Kerror: [m[K?[01m[Kpattern_samples[m[K? was not declared in this scope
+       const Vec2f& sample = [01;31m[Kpattern_samples[m[K[i];
+                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:233:27:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       Vec2f intensity_a = [01;36m[Kimage[m[K.InterpolateBilinear(sample_pos);
+                           [01;36m[K^~~~~[m[K
+                           [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:269:12:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (![01;31m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:269:12:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (![01;36m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;36m[K^~~~~[m[K
+            [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:276:7:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       [01;31m[Kimage[m[K.InterpolateBilinearWithJacobian(sample_pos, &intensity_a, &gradient_a);
+       [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:276:7:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       [01;36m[Kimage[m[K.InterpolateBilinearWithJacobian(sample_pos, &intensity_a, &gradient_a);
+       [01;36m[K^~~~~[m[K
+       [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In static member function ?[01m[Kstatic bool vis::SymmetryCostFunction_GradientsXY::ComputeCornerRefinementCostAndJacobian(const Mat3f&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:260:5:[m[K [01;31m[Kerror: [m[K?[01m[KH[m[K? was not declared in this scope
+     [01;31m[KH[m[K->triangularView<Eigen::Upper>().setZero();
+     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:260:37:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+     H->triangularView<Eigen::Upper>([01;31m[K)[m[K.setZero();
+                                     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:261:5:[m[K [01;31m[Kerror: [m[K?[01m[Kb[m[K? was not declared in this scope
+     [01;31m[Kb[m[K->setZero();
+     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:262:6:[m[K [01;31m[Kerror: [m[K?[01m[Kout_cost[m[K? was not declared in this scope
+     *[01;31m[Kout_cost[m[K = 0;
+      [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:262:6:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koptopt[m[K?
+     *[01;36m[Kout_cost[m[K = 0;
+      [01;36m[K^~~~~~~~[m[K
+      [32m[Koptopt[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:264:25:[m[K [01;31m[Kerror: [m[K?[01m[Knum_samples[m[K? was not declared in this scope
+     for (int i = 0; i < [01;31m[Knum_samples[m[K; ++ i) {
+                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:265:29:[m[K [01;31m[Kerror: [m[K?[01m[Kpattern_samples[m[K? was not declared in this scope
+       const Vec2f& sample = [01;31m[Kpattern_samples[m[K[i];
+                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:385:39:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+       H->triangularView<Eigen::Upper>([01;31m[K)[m[K += jacobian.row(0).transpose() * jacobian_weighted;
+                                       [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:269:12:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (![01;31m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:269:12:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (![01;36m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;36m[K^~~~~[m[K
+            [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:276:7:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       [01;31m[Kimage[m[K.InterpolateBilinearWithJacobian(sample_pos, &intensity_a, &gradient_a);
+       [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:276:7:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       [01;36m[Kimage[m[K.InterpolateBilinearWithJacobian(sample_pos, &intensity_a, &gradient_a);
+       [01;36m[K^~~~~[m[K
+       [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:389:39:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+       H->triangularView<Eigen::Upper>([01;31m[K)[m[K += jacobian.row(1).transpose() * jacobian_weighted;
+                                       [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K At global scope:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:404:13:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type; did you mean ?[01m[KIplImage[m[K??
+       const [01;31m[KImage[m[K<T>& image,
+             [01;31m[K^~~~~[m[K
+             [32m[KIplImage[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:404:18:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+       const Image[01;31m[K<[m[KT>& image,
+                  [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:440:13:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type; did you mean ?[01m[KIplImage[m[K??
+       const [01;31m[KImage[m[K<T>& image,
+             [01;31m[K^~~~~[m[K
+             [32m[KIplImage[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:440:18:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+       const Image[01;31m[K<[m[KT>& image,
+                  [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In static member function ?[01m[Kstatic bool vis::SymmetryCostFunction_SingleChannel::ComputeCornerRefinementCost(const Mat3f&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:408:6:[m[K [01;31m[Kerror: [m[K?[01m[Kout_cost[m[K? was not declared in this scope
+     *[01;31m[Kout_cost[m[K = 0;
+      [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:408:6:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koptopt[m[K?
+     *[01;36m[Kout_cost[m[K = 0;
+      [01;36m[K^~~~~~~~[m[K
+      [32m[Koptopt[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:409:25:[m[K [01;31m[Kerror: [m[K?[01m[Knum_samples[m[K? was not declared in this scope
+     for (int i = 0; i < [01;31m[Knum_samples[m[K; ++ i) {
+                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:410:29:[m[K [01;31m[Kerror: [m[K?[01m[Kpattern_samples[m[K? was not declared in this scope
+       const Vec2f& sample = [01;31m[Kpattern_samples[m[K[i];
+                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:385:39:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+       H->triangularView<Eigen::Upper>([01;31m[K)[m[K += jacobian.row(0).transpose() * jacobian_weighted;
+                                       [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:414:12:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (![01;31m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:414:12:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (![01;36m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;36m[K^~~~~[m[K
+            [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:419:27:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       float intensity_a = [01;31m[Kimage[m[K.InterpolateBilinear(sample_pos);
+                           [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:419:27:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       float intensity_a = [01;36m[Kimage[m[K.InterpolateBilinear(sample_pos);
+                           [01;36m[K^~~~~[m[K
+                           [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In static member function ?[01m[Kstatic bool vis::SymmetryCostFunction_SingleChannel::ComputeCornerRefinementCostAndJacobian(const Mat3f&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:446:5:[m[K [01;31m[Kerror: [m[K?[01m[KH[m[K? was not declared in this scope
+     [01;31m[KH[m[K->triangularView<Eigen::Upper>().setZero();
+     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:446:37:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+     H->triangularView<Eigen::Upper>([01;31m[K)[m[K.setZero();
+                                     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:447:5:[m[K [01;31m[Kerror: [m[K?[01m[Kb[m[K? was not declared in this scope
+     [01;31m[Kb[m[K->setZero();
+     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:448:6:[m[K [01;31m[Kerror: [m[K?[01m[Kout_cost[m[K? was not declared in this scope
+     *[01;31m[Kout_cost[m[K = 0;
+      [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:448:6:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koptopt[m[K?
+     *[01;36m[Kout_cost[m[K = 0;
+      [01;36m[K^~~~~~~~[m[K
+      [32m[Koptopt[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:450:25:[m[K [01;31m[Kerror: [m[K?[01m[Knum_samples[m[K? was not declared in this scope
+     for (int i = 0; i < [01;31m[Knum_samples[m[K; ++ i) {
+                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:389:39:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+       H->triangularView<Eigen::Upper>([01;31m[K)[m[K += jacobian.row(1).transpose() * jacobian_weighted;
+                                       [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:451:29:[m[K [01;31m[Kerror: [m[K?[01m[Kpattern_samples[m[K? was not declared in this scope
+       const Vec2f& sample = [01;31m[Kpattern_samples[m[K[i];
+                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K At global scope:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:404:13:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type
+       const [01;31m[KImage[m[K<T>& image,
+             [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:404:18:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+       const Image[01;31m[K<[m[KT>& image,
+                  [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:440:13:[m[K [01;31m[Kerror: [m[K?[01m[KImage[m[K? does not name a type
+       const [01;31m[KImage[m[K<T>& image,
+             [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:440:18:[m[K [01;31m[Kerror: [m[Kexpected ?[01m[K,[m[K? or ?[01m[K...[m[K? before ?[01m[K<[m[K? token
+       const Image[01;31m[K<[m[KT>& image,
+                  [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In static member function ?[01m[Kstatic bool vis::SymmetryCostFunction_SingleChannel::ComputeCornerRefinementCost(const Mat3f&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:408:6:[m[K [01;31m[Kerror: [m[K?[01m[Kout_cost[m[K? was not declared in this scope
+     *[01;31m[Kout_cost[m[K = 0;
+      [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:408:6:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koptopt[m[K?
+     *[01;36m[Kout_cost[m[K = 0;
+      [01;36m[K^~~~~~~~[m[K
+      [32m[Koptopt[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:409:25:[m[K [01;31m[Kerror: [m[K?[01m[Knum_samples[m[K? was not declared in this scope
+     for (int i = 0; i < [01;31m[Knum_samples[m[K; ++ i) {
+                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:410:29:[m[K [01;31m[Kerror: [m[K?[01m[Kpattern_samples[m[K? was not declared in this scope
+       const Vec2f& sample = [01;31m[Kpattern_samples[m[K[i];
+                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:455:12:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (![01;31m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:455:12:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (![01;36m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;36m[K^~~~~[m[K
+            [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:462:7:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       [01;31m[Kimage[m[K.InterpolateBilinearWithJacobian(sample_pos, &intensity_a, &gradient_a);
+       [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:462:7:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       [01;36m[Kimage[m[K.InterpolateBilinearWithJacobian(sample_pos, &intensity_a, &gradient_a);
+       [01;36m[K^~~~~[m[K
+       [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:414:12:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (![01;31m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:414:12:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (![01;36m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;36m[K^~~~~[m[K
+            [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:419:27:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       float intensity_a = [01;31m[Kimage[m[K.InterpolateBilinear(sample_pos);
+                           [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:419:27:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       float intensity_a = [01;36m[Kimage[m[K.InterpolateBilinear(sample_pos);
+                           [01;36m[K^~~~~[m[K
+                           [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:[m[K In static member function ?[01m[Kstatic bool vis::SymmetryCostFunction_SingleChannel::ComputeCornerRefinementCostAndJacobian(const Mat3f&, int)[m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:446:5:[m[K [01;31m[Kerror: [m[K?[01m[KH[m[K? was not declared in this scope
+     [01;31m[KH[m[K->triangularView<Eigen::Upper>().setZero();
+     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:446:37:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+     H->triangularView<Eigen::Upper>([01;31m[K)[m[K.setZero();
+                                     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:447:5:[m[K [01;31m[Kerror: [m[K?[01m[Kb[m[K? was not declared in this scope
+     [01;31m[Kb[m[K->setZero();
+     [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:448:6:[m[K [01;31m[Kerror: [m[K?[01m[Kout_cost[m[K? was not declared in this scope
+     *[01;31m[Kout_cost[m[K = 0;
+      [01;31m[K^~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:448:6:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Koptopt[m[K?
+     *[01;36m[Kout_cost[m[K = 0;
+      [01;36m[K^~~~~~~~[m[K
+      [32m[Koptopt[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:450:25:[m[K [01;31m[Kerror: [m[K?[01m[Knum_samples[m[K? was not declared in this scope
+     for (int i = 0; i < [01;31m[Knum_samples[m[K; ++ i) {
+                         [01;31m[K^~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:451:29:[m[K [01;31m[Kerror: [m[K?[01m[Kpattern_samples[m[K? was not declared in this scope
+       const Vec2f& sample = [01;31m[Kpattern_samples[m[K[i];
+                             [01;31m[K^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:571:39:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+       H->triangularView<Eigen::Upper>([01;31m[K)[m[K += jacobian.transpose() * jacobian_weighted;
+                                       [01;31m[K^[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:455:12:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       if (![01;31m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:455:12:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       if (![01;36m[Kimage[m[K.ContainsPixelCenterConv(sample_pos)) {
+            [01;36m[K^~~~~[m[K
+            [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:462:7:[m[K [01;31m[Kerror: [m[K?[01m[Kimage[m[K? was not declared in this scope
+       [01;31m[Kimage[m[K.InterpolateBilinearWithJacobian(sample_pos, &intensity_a, &gradient_a);
+       [01;31m[K^~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:462:7:[m[K [01;36m[Knote: [m[Ksuggested alternative: ?[01m[Kcimagq[m[K?
+       [01;36m[Kimage[m[K.InterpolateBilinearWithJacobian(sample_pos, &intensity_a, &gradient_a);
+       [01;36m[K^~~~~[m[K
+       [32m[Kcimagq[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/symmetry_refinement.h:571:39:[m[K [01;31m[Kerror: [m[Kexpected primary-expression before ?[01m[K)[m[K? token
+       H->triangularView<Eigen::Upper>([01;31m[K)[m[K += jacobian.transpose() * jacobian_weighted;
+                                       [01;31m[K^[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:289:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:1[m[K:
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp: In instantiation of ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::project_to_original_image() [with C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:22:98:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:752:43:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                         for (size_t k=0; [01;35m[Kk<num_corners_[m[K; k++)
+                                          [01;35m[K~^~~~~~~~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7:0[m[K:
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp: In instantiation of ?[01m[Kaslam::cameras::TartanCalibWorker<C>::TartanCalibWorker(const C*, aslam::cameras::GridDetector, const std::vector<aslam::cameras::GridCalibrationTargetObservation>&, const MatrixXd&, const MatrixXd&, const MatrixXd&, const std::vector<std::__cxx11::basic_string<char> >&, const std::vector<std::__cxx11::basic_string<char> >&) [with C = aslam::cameras::CameraGeometryBase; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:103:34:[m[K   required from ?[01m[Kboost::python::list detail::getProjections(const C*, aslam::cameras::GridDetector, const boost::python::api::object&, const MatrixXd&, const MatrixXd&, const MatrixXd&, const boost::python::list&, const boost::python::list&) [with C = aslam::cameras::CameraGeometryBase; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:194:120:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:263:55:[m[K [01;35m[Kwarning: [m[K?[01m[Kaslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>::tagDetector_[m[K? will be initialized after [[01;35m[K-Wreorder[m[K]
+             boost::shared_ptr<AprilTags::TagDetector> [01;35m[KtagDetector_[m[K;
+                                                       [01;35m[K^~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:245:22:[m[K [01;35m[Kwarning: [m[K  ?[01m[Kconst aslam::cameras::CameraGeometryBase* aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>::camera_[m[K? [[01;35m[K-Wreorder[m[K]
+             const C* [01;35m[Kcamera_[m[K;
+                      [01;35m[K^~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7:0[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:87:13:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+             [01;35m[KTartanCalibWorker[m[K(const C* camera,aslam::cameras::GridDetector gd,const std::vector<aslam::cameras::GridCalibrationTargetObservation>& obslist, const  Eigen::MatrixXd & fovs, const  Eigen::MatrixXd & poses, const  Eigen::MatrixXd & resolutions,const std::vector<std::string>& reproj_types, const std::vector<std::string>& debug_modes)
+             [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7:0[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:245:22:[m[K [01;35m[Kwarning: [m[K?[01m[Kaslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>::camera_[m[K? will be initialized after [[01;35m[K-Wreorder[m[K]
+             const C* [01;35m[Kcamera_[m[K;
+                      [01;35m[K^~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:234:29:[m[K [01;35m[Kwarning: [m[K  ?[01m[KEigen::MatrixXd aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>::fovs_[m[K? [[01;35m[K-Wreorder[m[K]
+             Eigen::MatrixXd [01;35m[Kfovs_[m[K, poses_, resolutions_;
+                             [01;35m[K^~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7:0[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:87:13:[m[K [01;35m[Kwarning: [m[K  when initialized here [[01;35m[K-Wreorder[m[K]
+             [01;35m[KTartanCalibWorker[m[K(const C* camera,aslam::cameras::GridDetector gd,const std::vector<aslam::cameras::GridCalibrationTargetObservation>& obslist, const  Eigen::MatrixXd & fovs, const  Eigen::MatrixXd & poses, const  Eigen::MatrixXd & resolutions,const std::vector<std::string>& reproj_types, const std::vector<std::string>& debug_modes)
+             [01;35m[K^~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/Schweizer-Messer/sm_boost/include/sm/boost/serialization.hpp:10:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cameras/include/aslam/cameras/CameraGeometryBase.hpp:8[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:3[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:110:140:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+               SM_ASSERT_TRUE(std::runtime_error,num_views_ == poses_.cols() && poses_.cols() == resolutions_.cols() && [01;35m[Kresolutions_.cols() == reproj_types.size()[m[K, "All inserted tartan matrices need the same number of columns." );
+                                                                                                                        [01;35m[K~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/Schweizer-Messer/sm_common/include/sm/assert_macros.hpp:85:8:[m[K [01;36m[Knote: [m[Kin definition of macro ?[01m[KSM_ASSERT_TRUE[m[K?
+   if(!([01;36m[Kcondition[m[K))              \
+        [01;36m[K^~~~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:289:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7[m[K:
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp: In instantiation of ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::project_to_original_image() [with C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:109:3:[m[K   required from ?[01m[Kboost::python::list detail::getProjections(const C*, aslam::cameras::GridDetector, const boost::python::api::object&, const MatrixXd&, const MatrixXd&, const MatrixXd&, const boost::python::list&, const boost::python::list&) [with C = aslam::cameras::CameraGeometryBase; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:194:120:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:752:43:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                         for (size_t k=0; [01;35m[Kk<num_corners_[m[K; k++)
+                                          [01;35m[K~^~~~~~~~~~~~~[m[K
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp: In instantiation of ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::match_quads(aslam::cameras::ReprojectionWrapper<C>&) [with C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:773:32:[m[K   required from ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::project_to_original_image() [with C = aslam::cameras::CameraGeometryBase][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:22:98:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:193:52:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 for (int corner_idx =0; [01;35m[Kcorner_idx < outCornerList_imageframe.size()[m[K; corner_idx++)
+                                         [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:205:42:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 if ([01;35m[KoutCornerIdx_.size() >= minInitCornersAutoComplete[m[K)
+                     [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:284:41:[m[K [01;35m[Kwarning: [m[Kunused variable ?[01m[Krefine_raw[m[K? [[01;35m[K-Wunused-variable[m[K]
+                                     int [01;35m[Krefine_raw[m[K = refine_window_size;
+                                         [01;35m[K^~~~~~~~~~[m[K
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp: In instantiation of ?[01m[Kcv::Mat aslam::cameras::TartanCalibWorker<C>::get_mat(std::vector<aslam::cameras::GridCalibrationTargetObservation>, bool, float, std::vector<cv::Scalar_<double> >, float) [with C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:503:56:[m[K   required from ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::debug_show() [with C = aslam::cameras::CameraGeometryBase][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:23:83:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:676:32:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 for (int i=0; [01;35m[Ki<obslist.size()[m[K;i++)
+                               [01;35m[K~^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:289:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:1[m[K:
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp: In instantiation of ?[01m[Kbool aslam::cameras::TartanCalibWorker<C>::export_dataset(std::__cxx11::string) [with C = aslam::cameras::CameraGeometryBase; std::__cxx11::string = std::__cxx11::basic_string<char>][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:472:27:[m[K   required from ?[01m[Kstd::vector<aslam::cameras::GridCalibrationTargetObservation> aslam::cameras::TartanCalibWorker<C>::getNewObs() [with C = aslam::cameras::CameraGeometryBase][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:24:82:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:42:53:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+             for (int camera_index = 0; [01;35m[Kcamera_index < num_cameras[m[K; ++ camera_index) {
+                                        [01;35m[K~~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:52:57:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+             for (int imageset_index = 0; [01;35m[Kimageset_index < num_imagesets[m[K; ++ imageset_index) {
+                                          [01;35m[K~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:62:57:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 for (int camera_index = 0; [01;35m[Kcamera_index < num_cameras[m[K; ++ camera_index) {
+                                            [01;35m[K~~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:66:58:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                     for (int feature_idx =0; [01;35m[Kfeature_idx <num_features[m[K; feature_idx++ ) {
+                                              [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:89:57:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+             for (int geometry_index = 0; [01;35m[Kgeometry_index < num_known_geometries[m[K; ++ geometry_index) {
+                                          [01;35m[K~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:105:33:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 for (int j=0; [01;35m[Kj <feature_id_to_position_size[m[K; j++) {
+                               [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:289:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7[m[K:
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp: In instantiation of ?[01m[Kbool aslam::cameras::TartanCalibWorker<C>::export_dataset(std::__cxx11::string) [with C = aslam::cameras::CameraGeometryBase; std::__cxx11::string = std::__cxx11::basic_string<char>][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:109:29:[m[K   required from ?[01m[Kaslam::cameras::TartanCalibWorker<C>::TartanCalibWorker(const C*, aslam::cameras::GridDetector, const std::vector<aslam::cameras::GridCalibrationTargetObservation>&, const MatrixXd&, const MatrixXd&, const MatrixXd&, const std::vector<std::__cxx11::basic_string<char> >&, const std::vector<std::__cxx11::basic_string<char> >&) [with C = aslam::cameras::CameraGeometryBase; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:103:34:[m[K   required from ?[01m[Kboost::python::list detail::getProjections(const C*, aslam::cameras::GridDetector, const boost::python::api::object&, const MatrixXd&, const MatrixXd&, const MatrixXd&, const boost::python::list&, const boost::python::list&) [with C = aslam::cameras::CameraGeometryBase; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:194:120:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:42:53:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+             for (int camera_index = 0; [01;35m[Kcamera_index < num_cameras[m[K; ++ camera_index) {
+                                        [01;35m[K~~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:52:57:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+             for (int imageset_index = 0; [01;35m[Kimageset_index < num_imagesets[m[K; ++ imageset_index) {
+                                          [01;35m[K~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:62:57:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 for (int camera_index = 0; [01;35m[Kcamera_index < num_cameras[m[K; ++ camera_index) {
+                                            [01;35m[K~~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:66:58:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                     for (int feature_idx =0; [01;35m[Kfeature_idx <num_features[m[K; feature_idx++ ) {
+                                              [01;35m[K~~~~~~~~~~~~^~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:89:57:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+             for (int geometry_index = 0; [01;35m[Kgeometry_index < num_known_geometries[m[K; ++ geometry_index) {
+                                          [01;35m[K~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:105:33:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 for (int j=0; [01;35m[Kj <feature_id_to_position_size[m[K; j++) {
+                               [01;35m[K~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:289:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7[m[K:
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp: In instantiation of ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::match_quads(aslam::cameras::ReprojectionWrapper<C>&) [with C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:773:32:[m[K   required from ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::project_to_original_image() [with C = aslam::cameras::CameraGeometryBase][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:109:3:[m[K   required from ?[01m[Kboost::python::list detail::getProjections(const C*, aslam::cameras::GridDetector, const boost::python::api::object&, const MatrixXd&, const MatrixXd&, const MatrixXd&, const boost::python::list&, const boost::python::list&) [with C = aslam::cameras::CameraGeometryBase; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:194:120:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:193:52:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 for (int corner_idx =0; [01;35m[Kcorner_idx < outCornerList_imageframe.size()[m[K; corner_idx++)
+                                         [01;35m[K~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:205:42:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 if ([01;35m[KoutCornerIdx_.size() >= minInitCornersAutoComplete[m[K)
+                     [01;35m[K~~~~~~~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:284:41:[m[K [01;35m[Kwarning: [m[Kunused variable ?[01m[Krefine_raw[m[K? [[01;35m[K-Wunused-variable[m[K]
+                                     int [01;35m[Krefine_raw[m[K = refine_window_size;
+                                         [01;35m[K^~~~~~~~~~[m[K
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp: In instantiation of ?[01m[Kcv::Mat aslam::cameras::TartanCalibWorker<C>::get_mat(std::vector<aslam::cameras::GridCalibrationTargetObservation>, bool, float, std::vector<cv::Scalar_<double> >, float) [with C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:503:56:[m[K   required from ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::debug_show() [with C = aslam::cameras::CameraGeometryBase][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:110:3:[m[K   required from ?[01m[Kboost::python::list detail::getProjections(const C*, aslam::cameras::GridDetector, const boost::python::api::object&, const MatrixXd&, const MatrixXd&, const MatrixXd&, const boost::python::list&, const boost::python::list&) [with C = aslam::cameras::CameraGeometryBase; Eigen::MatrixXd = Eigen::Matrix<double, -1, -1>][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:194:120:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:676:32:[m[K [01;35m[Kwarning: [m[Kcomparison between signed and unsigned integer expressions [[01;35m[K-Wsign-compare[m[K]
+                 for (int i=0; [01;35m[Ki<obslist.size()[m[K;i++)
+                               [01;35m[K~^~~~~~~~~~~~~~~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:1:0[m[K:
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp: In instantiation of ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::save(Archive&, unsigned int) const [with Archive = boost::archive::text_oarchive; C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/usr/include/boost/serialization/access.hpp:91:9:[m[K   required from ?[01m[Kstatic void boost::serialization::access::member_save(Archive&, T&, unsigned int) [with Archive = boost::archive::text_oarchive; T = const aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/usr/include/boost/serialization/split_member.hpp:43:32:[m[K   required from ?[01m[Kstatic void boost::serialization::detail::member_saver<Archive, T>::invoke(Archive&, const T&, unsigned int) [with Archive = boost::archive::text_oarchive; T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/usr/include/boost/serialization/split_member.hpp:69:18:[m[K   required from ?[01m[Kvoid boost::serialization::split_member(Archive&, T&, unsigned int) [with Archive = boost::archive::text_oarchive; T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:212:13:[m[K   required from ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::serialize(Archive&, unsigned int) [with Archive = boost::archive::text_oarchive; C = aslam::cameras::CameraGeometryBase][m[K?
+[01m[K/usr/include/boost/serialization/access.hpp:116:9:[m[K   required from ?[01m[Kstatic void boost::serialization::access::serialize(Archive&, T&, unsigned int) [with Archive = boost::archive::text_oarchive; T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/usr/include/boost/serialization/serialization.hpp:68:22:[m[K   [ skipping 7 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+[01m[K/usr/include/boost/archive/detail/common_oarchive.hpp:70:22:[m[K   required from ?[01m[Kvoid boost::archive::detail::common_oarchive<Archive>::save_override(T&) [with T = const aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>; Archive = boost::archive::text_oarchive][m[K?
+[01m[K/usr/include/boost/archive/basic_text_oarchive.hpp:83:9:[m[K   required from ?[01m[Kvoid boost::archive::basic_text_oarchive<Archive>::save_override(T&) [with T = const aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>; Archive = boost::archive::text_oarchive][m[K?
+[01m[K/usr/include/boost/archive/detail/interface_oarchive.hpp:70:9:[m[K   required from ?[01m[KArchive& boost::archive::detail::interface_oarchive<Archive>::operator<<(const T&) [with T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>; Archive = boost::archive::text_oarchive][m[K?
+[01m[K/catkin_ws/src/kalibr/Schweizer-Messer/sm_python/include/sm/python/boost_serialization_pickle.hpp:78:8:[m[K   required from ?[01m[Kstatic boost::python::tuple sm::python::pickle_suite<T>::getstate(const T&) [with T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/usr/include/boost/python/class.hpp:344:9:[m[K   required from ?[01m[Kboost::python::class_<T, X1, X2, X3>::self& boost::python::class_<T, X1, X2, X3>::def_pickle(const PickleSuiteType&) [with PickleSuiteType = sm::python::pickle_suite<aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase> >; W = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>; X1 = boost::python::detail::not_specified; X2 = boost::python::detail::not_specified; X3 = boost::python::detail::not_specified; boost::python::class_<T, X1, X2, X3>::self = boost::python::class_<aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase> >][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:25:102:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:216:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ?[01m[Kar[m[K? [[01;35m[K-Wunused-parameter[m[K]
+             void save(Archive & [01;35m[Kar[m[K, const unsigned int /*version*/) const
+                                 [01;35m[K^~[m[K
+/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp: In instantiation of ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::load(Archive&, unsigned int) [with Archive = boost::archive::text_iarchive; C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/usr/include/boost/serialization/access.hpp:99:9:[m[K   required from ?[01m[Kstatic void boost::serialization::access::member_load(Archive&, T&, unsigned int) [with Archive = boost::archive::text_iarchive; T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/usr/include/boost/serialization/split_member.hpp:54:32:[m[K   required from ?[01m[Kstatic void boost::serialization::detail::member_loader<Archive, T>::invoke(Archive&, T&, unsigned int) [with Archive = boost::archive::text_iarchive; T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/usr/include/boost/serialization/split_member.hpp:69:18:[m[K   required from ?[01m[Kvoid boost::serialization::split_member(Archive&, T&, unsigned int) [with Archive = boost::archive::text_iarchive; T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:212:13:[m[K   required from ?[01m[Kvoid aslam::cameras::TartanCalibWorker<C>::serialize(Archive&, unsigned int) [with Archive = boost::archive::text_iarchive; C = aslam::cameras::CameraGeometryBase][m[K?
+[01m[K/usr/include/boost/serialization/access.hpp:116:9:[m[K   required from ?[01m[Kstatic void boost::serialization::access::serialize(Archive&, T&, unsigned int) [with Archive = boost::archive::text_iarchive; T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/usr/include/boost/serialization/serialization.hpp:68:22:[m[K   [ skipping 8 instantiation contexts, use -ftemplate-backtrace-limit=0 to disable ]
+[01m[K/usr/include/boost/archive/basic_text_iarchive.hpp:70:9:[m[K   required from ?[01m[Kvoid boost::archive::basic_text_iarchive<Archive>::load_override(T&) [with T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>; Archive = boost::archive::text_iarchive][m[K?
+[01m[K/usr/include/boost/archive/text_iarchive.hpp:82:52:[m[K   required from ?[01m[Kvoid boost::archive::text_iarchive_impl<Archive>::load_override(T&) [with T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>; Archive = boost::archive::text_iarchive][m[K?
+[01m[K/usr/include/boost/archive/detail/interface_iarchive.hpp:68:9:[m[K   required from ?[01m[KArchive& boost::archive::detail::interface_iarchive<Archive>::operator>>(T&) [with T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>; Archive = boost::archive::text_iarchive][m[K?
+[01m[K/catkin_ws/src/kalibr/Schweizer-Messer/sm_python/include/sm/python/boost_serialization_pickle.hpp:90:8:[m[K   required from ?[01m[Kstatic void sm::python::pickle_suite<T>::setstate(T&, boost::python::tuple) [with T = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>][m[K?
+[01m[K/usr/include/boost/python/class.hpp:345:9:[m[K   required from ?[01m[Kboost::python::class_<T, X1, X2, X3>::self& boost::python::class_<T, X1, X2, X3>::def_pickle(const PickleSuiteType&) [with PickleSuiteType = sm::python::pickle_suite<aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase> >; W = aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase>; X1 = boost::python::detail::not_specified; X2 = boost::python::detail::not_specified; X3 = boost::python::detail::not_specified; boost::python::class_<T, X1, X2, X3>::self = boost::python::class_<aslam::cameras::TartanCalibWorker<aslam::cameras::CameraGeometryBase> >][m[K?
+[01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:25:102:[m[K   required from here
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:221:33:[m[K [01;35m[Kwarning: [m[Kunused parameter ?[01m[Kar[m[K? [[01;35m[K-Wunused-parameter[m[K]
+             void load(Archive & [01;35m[Kar[m[K, const unsigned int /*version*/)
+                                 [01;35m[K^~[m[K
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:289:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/tartancalibworker_.cpp:1[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:[m[K In member function ?[01m[Kbool aslam::cameras::TartanCalibWorker<C>::export_dataset(std::__cxx11::string) [with C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:120:9:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K-Wreturn-type[m[K]
+         [01;35m[K}[m[K
+         [01;35m[K^[m[K
+At global scope:
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kunrecognized command line option ?[01m[K-Wno-deprecated-copy[m[K?
+make[2]: *** [CMakeFiles/aslam_cv_python.dir/src/tartancalibworker_.cpp.o] Error 1
+make[2]: *** Waiting for unfinished jobs....
+In file included from [01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/TartanCalibWorker.hpp:289:0[m[K,
+                 from [01m[K/catkin_ws/src/kalibr/aslam_cv/aslam_cv_python/src/CameraGeometry.cpp:7[m[K:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:[m[K In member function ?[01m[Kbool aslam::cameras::TartanCalibWorker<C>::export_dataset(std::__cxx11::string) [with C = aslam::cameras::CameraGeometryBase][m[K?:
+[01m[K/catkin_ws/src/kalibr/aslam_cv/tartan_calib/include/aslam/implementation/TartanCalibWorker.hpp:120:9:[m[K [01;35m[Kwarning: [m[Kcontrol reaches end of non-void function [[01;35m[K-Wreturn-type[m[K]
+         [01;35m[K}[m[K
+         [01;35m[K^[m[K
+At global scope:
+[01m[Kcc1plus:[m[K [01;35m[Kwarning: [m[Kunrecognized command line option ?[01m[K-Wno-deprecated-copy[m[K?
+make[2]: *** [CMakeFiles/aslam_cv_python.dir/src/CameraGeometry.cpp.o] Error 1
+make[1]: *** [CMakeFiles/aslam_cv_python.dir/all] Error 2
+make: *** [all] Error 2
+cd /catkin_ws/build/aslam_cv_python; catkin build --get-env aslam_cv_python | catkin env -si  /usr/bin/make --jobserver-fds=6,7 -j; cd -
+WARNING: Could not encode unicode characters. Please set the PYTHONIOENCODING environment variable to see complete output. (i.e. PYTHONIOENCODING=UTF-8)
+....................................................................................................
+Failed << aslam_cv_python:make                           [ Exited with code 2 ]                     
+Failed <<< aslam_cv_python                               [ 5.6 seconds ]                            
+Abandoned <<< aslam_cv_backend_python                       [ Unrelated job failed ]                
+Abandoned <<< kalibr                                        [ Unrelated job failed ]                
+[build] Summary: 34 of 37 packages succeeded.                                                       
+[build] Ignored: None.                                                                              
+[build] Warnings: None.                                                                             
+[build] Abandoned: 2 packages were abandoned.                                                       
+[build] Failed: 1 packages failed.                                                                  
+[build] Runtime: 7.6 seconds total.                                                                 

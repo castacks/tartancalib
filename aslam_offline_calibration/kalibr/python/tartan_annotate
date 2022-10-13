@@ -1,0 +1,119 @@
+#!/usr/bin/env python
+# print("importing libraries")
+from tartan_logging import TartanLogging
+import numpy as np
+import argparse
+import dill
+import matplotlib
+# matplotlib.use('pdf')
+import matplotlib.pyplot as plt
+import cv2
+import pylab as pl
+import math
+from sm import PlotCollection
+from matplotlib.backends.backend_pdf import PdfPages
+import cv2 
+
+
+def parseArgs():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-obsfile','--obsfile',required=False,help="The log pickle you want to use.")
+    parser.add_argument('-n_cams','--n_cams',required=False,default=2,help="Number of cams being loaded.")
+
+    return parser.parse_args()
+
+
+def getPolars(img_points,cams):
+    polars = [] 
+    for i, cam in enumerate(cams):
+
+        num_points = np.shape(img_points[i])[0]
+        for j in range(num_points):
+            ec_pnt = cam.keypointToEuclidean(img_points[i][j]) 
+            polars.append(np.rad2deg(np.arctan2(np.linalg.norm(ec_pnt[:2]),ec_pnt[-1])))
+    return polars
+
+
+def get_imgpoints(cams,obsdb):
+    err = np.array([])
+    polars = [] 
+    total_num_points = 0
+
+    img_points_x_global = np.array([])
+    img_points_y_global = np.array([])
+
+    all_img_points = []
+    num_frames = np.shape(obsdb)[1]
+    for i in range(num_frames):
+        img_points_x = obsdb[0][i].getCornersImageFrame()[:,0]
+        img_points_y = obsdb[0][i].getCornersImageFrame()[:,1]
+
+        num_points = np.size(img_points_x)
+        img_points_merged = np.zeros((num_points,2))
+        img_points_merged[:,0] = img_points_x
+        img_points_merged[:,1] = img_points_y
+
+        all_img_points.append([img_points_merged])
+
+
+
+    return all_img_points
+             
+
+def load_log(parsed):
+    with open(parsed.obsfile, 'r') as f:
+        tartanObsLog = dill.load(f)
+    
+    tartanObsdb = [log.ObservationDatabase_ for log in tartanObsLog]
+    
+    kalibrobsdb = tartanObsdb[0]
+    tartanobsdb = tartanObsdb[-1]
+
+    kalibrobs = [kalibrobsdb.observations[i] for i in range(parsed.n_cams)]
+    kalibrcams = [tartanObsLog[0].camera_[i] for i in range(parsed.n_cams)]
+
+    tartanobs = [tartanobsdb.observations[i] for i in range(parsed.n_cams)]
+    tartancams = [tartanObsLog[1].camera_[i] for i in range(parsed.n_cams)]
+
+    return [kalibrobs,tartanobs,kalibrcams,tartancams]
+
+def main():
+    parsed = parseArgs()
+
+    # experiment 1: 1 cams with 10X7 target
+    # parsed.obsfile = '/data/final_experiments/adaptive_500frames/experiment_5/log.pkl'
+    # parsed.n_cams = 1
+
+    # experiment 2: 1 cams with 6x6 target
+    # parsed.obsfile = '/data/final_experiments/adaptive_500frames/experiment_7/log.pkl'
+    # parsed.n_cams = 1 
+
+    # # experiment 3: 1 gopro with 10x7 target
+    # parsed.obsfile = '/data/final_experiments/adaptive_500frames/experiment_11/log.pkl'
+    # parsed.n_cams = 1    
+
+    # experiment 4: 1 gopro with 6x6 target
+    parsed.obsfile = '/data/final_experiments/adaptive_500frames/experiment_9/log.pkl'
+    output_dir = '/data/annotate/gopro6x6/'
+    parsed.n_cams = 1   
+
+    kalibrobs,tartanobs,kalibrcams,tartancams = load_log(parsed)
+    
+    img_points_kalibr = get_imgpoints(tartancams,kalibrobs)
+    img_points_tartan = get_imgpoints(tartancams,tartanobs)
+
+    num_frames = np.shape(img_points_kalibr)[2]
+
+
+    for i in range(num_frames):
+        print(i)
+        img = tartanobs[0][i].getImage()
+        kalibr_points = img_points_kalibr[0][0][i]
+        tartan_points = img_points_tartan[0][0][i]
+        
+        plt.imsave(output_dir+str(i)+'.png',img,cmap='gray')
+        np.savez(output_dir+str(i)+'_kalibr.npz',kalibr_points)
+        np.savez(output_dir+str(i)+'_tartan.npz',tartan_points)
+
+if __name__ == "__main__":
+    main()

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>ethz_apriltag2</name>
+  <description>ethz_apriltag2</description>
+  <version>0.0.1</version>
+  <maintainer email="paulfurgale@mavt.ethz.ch">Paul Furgale</maintainer>
+  <author>Paul Furgale</author>
+  <license>New BSD</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>eigen</build_depend>
+  <build_depend>libopencv-dev</build_depend>
+  <build_depend>libv4l-dev</build_depend>
+</package>

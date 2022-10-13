@@ -1,0 +1,183 @@
+#!/usr/bin/env python
+# print("importing libraries")
+from tartan_logging import TartanLogging
+import numpy as np
+import argparse
+import dill
+import matplotlib
+# matplotlib.use('pdf')
+import matplotlib.pyplot as plt
+import cv2
+import pylab as pl
+import math
+from sm import PlotCollection
+from matplotlib.backends.backend_pdf import PdfPages
+import cv2 
+import pandas as pd
+
+
+def parseArgs():
+    parser = argparse.ArgumentParser()
+    parser.add_argument('-obsfile','--obsfile',required=False,help="The log pickle you want to use.")
+    parser.add_argument('-n_cams','--n_cams',required=False,default=2,help="Number of cams being loaded.")
+
+    return parser.parse_args()
+
+
+def getPolars(img_points,cams):
+    polars = [] 
+    for i, cam in enumerate(cams):
+
+        num_points = np.shape(img_points[i])[0]
+        for j in range(num_points):
+            ec_pnt = cam.keypointToEuclidean(img_points[i][j]) 
+            polars.append(np.rad2deg(np.arctan2(np.linalg.norm(ec_pnt[:2]),ec_pnt[-1])))
+    return polars
+
+
+def get_imgpoints(cams,obsdb):
+    err = np.array([])
+    polars = [] 
+    total_num_points = 0
+
+    img_points_x_global = np.array([])
+    img_points_y_global = np.array([])
+
+    all_img_points = []
+    for i, cam in enumerate(cams):
+        img_points_x = np.concatenate([obs.getCornersImageFrame()[:,0] for obs in obsdb[i] ])
+        img_points_y = np.concatenate([obs.getCornersImageFrame()[:,1] for obs in obsdb[i] ])
+
+        num_points = np.size(img_points_x)
+        img_points_merged = np.zeros((num_points,2))
+        img_points_merged[:,0] = img_points_x
+        img_points_merged[:,1] = img_points_y
+
+        all_img_points.append(img_points_merged)
+
+
+
+    return all_img_points
+             
+
+def load_log(parsed):
+    with open(parsed.obsfile, 'r') as f:
+        tartanObsLog = dill.load(f)
+    
+    tartanObsdb = [log.ObservationDatabase_ for log in tartanObsLog]
+    
+    kalibrobsdb = tartanObsdb[0]
+    tartanobsdb = tartanObsdb[-1]
+
+    kalibrobs = [kalibrobsdb.observations[i] for i in range(parsed.n_cams)]
+    kalibrcams = [tartanObsLog[0].camera_[i] for i in range(parsed.n_cams)]
+
+    tartanobs = [tartanobsdb.observations[i] for i in range(parsed.n_cams)]
+    tartancams = [tartanObsLog[1].camera_[i] for i in range(parsed.n_cams)]
+
+    return [kalibrobs,tartanobs,kalibrcams,tartancams]
+
+
+
+def main():
+    parsed = parseArgs()
+    labels = ['Kalibr','Tartan','Deltille','AT3','Kaess','Aruco']
+
+    # # experiment 1: 2 cams with 10x7 target
+    # #deltille
+    external_files = [['/data/distribution_plots/np-corners/deltille/deltille-ord-10x7-sep12-500f-camera_0.npy','/data/distribution_plots/np-corners/deltille/deltille-ord-10x7-sep12-500f-camera_1.npy']]
+    #AT3
+    external_files.append(['/data/distribution_plots/np-corners/at3/at3-ord-10x7-sep12-500f-camera_0.npy','/data/distribution_plots/np-corners/at3/at3-ord-10x7-sep12-500f-camera_1.npy'])
+    #Kaess
+    external_files.append(['/data/distribution_plots/np-corners/kaess-at3/kaess_AT3-ord-10x7-sep12-500f-camera_0.npy','/data/distribution_plots/np-corners/kaess-at3/kaess_AT3-ord-10x7-sep12-500f-camera_1.npy'])
+    #Aruco
+    external_files.append(['/data/distribution_plots/np-corners/aruco/aruco-ord-10x7-sep12-500f-camera_0.npy','/data/distribution_plots/np-corners/aruco/aruco-ord-10x7-sep12-500f-camera_1.npy'])
+    parsed.obsfile = '/data/final_experiments/adaptive_500frames/experiment_5/log.pkl'
+    parsed.n_cams = 2
+    bins = np.linspace(0,100,11)
+    csv_dir = 'ord_10x7.csv'
+
+    # experiment 2: 2 cams with 6x6 target
+    #deltille
+    # external_files = [['/data/distribution_plots/np-corners/deltille/deltille-ord-6x6-sep12-500f-camera_0.npy','/data/distribution_plots/np-corners/deltille/deltille-ord-6x6-sep12-500f-camera_1.npy']]
+    # #AT3
+    # external_files.append(['/data/distribution_plots/np-corners/at3/at3-ord-6x6-sep12-500f-camera_0.npy','/data/distribution_plots/np-corners/at3/at3-ord-6x6-sep12-500f-camera_1.npy'])
+    # #Kaess
+    # external_files.append(['/data/distribution_plots/np-corners/kaess-at3/kaess_AT3-ord-6x6-sep12-500f-camera_0.npy','/data/distribution_plots/np-corners/kaess-at3/kaess_AT3-ord-6x6-sep12-500f-camera_1.npy'])
+    # #Aruco
+    # external_files.append(['/data/distribution_plots/np-corners/aruco/aruco-ord-6x6-sep12-500f-camera_0.npy','/data/distribution_plots/np-corners/aruco/aruco-ord-6x6-sep12-500f-camera_1.npy'])
+    # parsed.obsfile = '/data/final_experiments/adaptive_500frames/experiment_7/log.pkl'
+    # parsed.n_cams = 2 
+    # bins = np.linspace(0,100,11)
+    # csv_dir = 'ord_6x6.csv'
+
+    # # experiment 3: 1 gopro with 10x7 target
+    # #deltille
+    # external_files = [['/data/distribution_plots/np-corners/deltille/deltille-gopro-10x7-sep12-500f-camera_0.npy']]
+    # #AT3
+    # external_files.append(['/data/distribution_plots/np-corners/at3/at3-gopro-10x7-sep12-500f-camera_0.npy'])
+    # #Kaess
+    # external_files.append(['/data/distribution_plots/np-corners/kaess-at3/kaess_AT3-gopro-10x7-sep12-500f-camera_0.npy'])
+    # #Aruco
+    # external_files.append(['/data/distribution_plots/np-corners/aruco/aruco-gopro-10x7-sep12-500f-camera_0.npy'])
+    # parsed.obsfile = '/data/final_experiments/adaptive_500frames/experiment_11/log.pkl'
+    # parsed.n_cams = 1    
+    # bins = np.linspace(0,60,11)  
+
+    # experiment 4: 1 gopro with 6x6 target
+    #deltille
+    # external_files = [['/data/distribution_plots/np-corners/deltille/deltille-gopro-6x6-sep12-500f-camera_0.npy']]
+    # #AT3
+    # external_files.append(['/data/distribution_plots/np-corners/at3/at3-gopro-6x6-sep12-500f-camera_0.npy'])
+    # #Kaess
+    # external_files.append(['/data/distribution_plots/np-corners/kaess-at3/kaess_AT3-gopro-6x6-sep12-500f-camera_0.npy'])
+    # #Aruco
+    # external_files.append(['/data/distribution_plots/np-corners/aruco/aruco-gopro-6x6-sep12-500f-camera_0.npy'])
+    # parsed.obsfile = '/data/final_experiments/adaptive_500frames/experiment_9/log.pkl'
+    # parsed.n_cams = 1   
+    # bins = np.linspace(0,60,11)  
+
+
+    kalibrobs,tartanobs,kalibrcams,tartancams = load_log(parsed)
+    
+    img_points_kalibr = get_imgpoints(tartancams,kalibrobs)
+    polars_kalibr = getPolars(img_points_kalibr,tartancams)
+
+    img_points_tartan = get_imgpoints(tartancams,tartanobs)
+    polars_tartan = getPolars(img_points_tartan,tartancams)
+
+    hist_data = [polars_kalibr,polars_tartan]
+
+    for external_file in external_files:
+        external_imgpoints = []
+        for external_cam in external_file:
+            external_np = np.load(external_cam)
+            external_imgpoints.append(external_np)
+        
+        hist_data.append(getPolars(external_imgpoints,tartancams))
+    
+
+
+    bins_str = [""]+[str(bins[i])+"-"+str(bins[i+1])  for i in range(len(bins)-1)]
+    df=pd.DataFrame(columns=bins_str)
+
+    counts_matrix = np.zeros((len(hist_data),len(bins)-1))
+
+    for i, hist_point in enumerate(hist_data):
+            counts, bins = np.histogram(hist_point,bins)
+            counts_matrix[i] = counts
+    
+    counts_maxs = np.max(counts_matrix,axis=0)
+    print(counts_maxs)
+    for i, hist_point in enumerate(hist_data):
+            counts, bins = np.histogram(hist_point,bins)
+            df_line = [labels[i]] + [str(count/counts_maxs[j]) for j, count in enumerate(counts)]
+            print(df_line)
+            df.loc[len(df.index)] = df_line
+
+    df.to_csv(csv_dir)
+
+
+
+if __name__ == "__main__":
+    main()
