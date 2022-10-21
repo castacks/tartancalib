@@ -11,7 +11,7 @@ RUN apt-get update && DEBIAN_FRONTEND=noninteractive \
 	libeigen3-dev libboost-all-dev libsuitesparse-dev \
 	doxygen \
 	libopencv-dev \
-	libpoco-dev libtbb-dev libblas-dev liblapack-dev libv4l-dev \
+	libpoco-dev libtbb-dev libblas-dev liblapack-dev libv4l-dev libglew-dev\
 	python-catkin-tools
 
 
@@ -31,6 +31,7 @@ ADD . $WORKSPACE/src/kalibr
 RUN	cd $WORKSPACE &&\
 	catkin build -j$(nproc)
 
+RUN pip install dill
 
 # When a user runs a command we will run this code before theirs
 # This will allow for using the manual focal length if it fails to init
@@ -39,12 +40,4 @@ ENTRYPOINT export KALIBR_MANUAL_FOCAL_LENGTH_INIT=1 && \
 	# /bin/bash -c "source \"$WORKSPACE/devel/setup.bash\"" && \ 
 	cd $WORKSPACE && \
 	/bin/bash
-
-
-
-
-
-
-
-
 

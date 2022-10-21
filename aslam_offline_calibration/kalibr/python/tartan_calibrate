@@ -143,7 +143,7 @@ def parseArgs():
     groupTartan.add_argument('--debug-modes', type=str, dest='l_debug', nargs='*', action='append', help='Choose from 7 possible debug modes for additional debug images: pointcloudprojection, pinholeprojection, originalprojection, targetpointcloud, individualprojections, reprojectionpoints and none.')
     groupTartan.add_argument('--min-init-corners-autocomplete', type=int, default=24, dest='min_init_corners_autocomplete', help='Minimum number of corners for autocomplete, since pose of the board is otherwise too inaccurate.')
     groupTartan.add_argument('--min-tag-size-autocomplete', type=int, default=0, dest='min_tag_size_autocomplete', help='Minimum tag size (px) before autocomplete. To ensure really small tags are discarded instead of detected inaccurately.')
-    groupTartan.add_argument('--correction-threshold', type=float, default=10.0, dest='correction_threshold', help='Number of pixels allowed for offset between reprojection and detection.')
+    groupTartan.add_argument('--correction-threshold', type=float, default=2.0, dest='correction_threshold', help='Number of pixels allowed for offset between reprojection and detection.')
     groupTartan.add_argument('--min-resize-window-size', type=int, default=2, dest='min_resize_window_size', help='Minimum window size allowed during dynamic sizing')
     groupTartan.add_argument('--max-resize-window-size', type=int, default=8, dest='max_resize_window_size', help='Maximum window size allowed during dynamic sizing')
     groupTartan.add_argument('--refine-magnitude-reject', type=float, default=10.0, dest='refine_magnitude_reject', help='')
