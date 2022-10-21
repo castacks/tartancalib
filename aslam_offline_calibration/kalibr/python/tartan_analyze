@@ -50,22 +50,21 @@ def evaluate(cams, obsdb):
         polars = [] 
         total_num_points = 0
         for i, cam in enumerate(cams):
+
+            # delete_idxs = get_outliers(err,4)
+            # err = np.delete(err,delete_idxs,1)
             err_local = cam.getReprojectionErrors(obsdb[i])
             num_points = np.shape(err_local)[0]
             err_local = np.transpose(np.reshape(err_local,(num_points,2)))
-
-
-            num_points = np.shape(err_local)[0]
-
             err_local = np.array([np.linalg.norm(err_local[:,q]) for q in range(num_points)])
-            num_points = np.shape(err_local)[0]
+            
             err = np.append(err,err_local)
             # mag_err = np.array([np.linalg.norm(err[:,q]) for q in range(num_points)])
 
             # polar normalized errors
             img_points_x = np.concatenate([obs.getCornersImageFrame()[:,0] for obs in obsdb[i] ])
             img_points_y = np.concatenate([obs.getCornersImageFrame()[:,1] for obs in obsdb[i] ])
-            
+
             for j in range(num_points):
                 ec_pnt = cam.keypointToEuclidean(np.array([[img_points_x[j]],[img_points_y[j]]])) 
                 polars.append(np.rad2deg(np.arctan2(np.linalg.norm(ec_pnt[:2]),ec_pnt[-1])))

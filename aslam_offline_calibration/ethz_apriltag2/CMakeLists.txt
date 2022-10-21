@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0.2)
 project(ethz_apriltag2)
 
 add_definitions(-fPIC -O3)
-
+set (CMAKE_CXX_STANDARD 11)
 find_package(catkin REQUIRED)
 find_package(Eigen3 REQUIRED)
 find_package(OpenCV REQUIRED)
