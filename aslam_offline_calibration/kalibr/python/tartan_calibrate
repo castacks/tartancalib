@@ -146,7 +146,7 @@ def parseArgs():
     groupTartan.add_argument('--correction-threshold', type=float, default=2.0, dest='correction_threshold', help='Number of pixels allowed for offset between reprojection and detection.')
     groupTartan.add_argument('--min-resize-window-size', type=int, default=2, dest='min_resize_window_size', help='Minimum window size allowed during dynamic sizing')
     groupTartan.add_argument('--max-resize-window-size', type=int, default=8, dest='max_resize_window_size', help='Maximum window size allowed during dynamic sizing')
-    groupTartan.add_argument('--refine-magnitude-reject', type=float, default=10.0, dest='refine_magnitude_reject', help='')
+    groupTartan.add_argument('--refine-magnitude-reject', type=float, default=2.0, dest='refine_magnitude_reject', help='')
     groupTartan.add_argument('--symmetry-refinement', action='store_true', dest='symmetry_refinement', help='Include symmetry refinement method')
     groupTartan.add_argument('--symmetry-edge-threshold', type=float, default=10.0, dest='symmetry_edge_threshold', help='')
     groupTartan.add_argument('--export-dataset-dir', type=str, default="", dest="export_dataset_dir", help='Filepath to export binary usable in generic camera model referenced in "Why Having 10000..." paper.')

@@ -555,9 +555,9 @@ namespace aslam
                     
                     std::vector<aslam::cameras::GridCalibrationTargetObservation> obslist({reprojection.obslist_[j]});
                     
-                    aslam::Time stamp = obslist_[j].time();
-                    SM_INFO_STREAM("Writing an autofill");
-                    cv::imwrite(debug_image_dir + std::to_string(stamp.toSec())+".png",img_color);
+                    // aslam::Time stamp = obslist_[j].time();
+                    // SM_INFO_STREAM("Writing an autofill");
+                    // cv::imwrite(debug_image_dir + std::to_string(stamp.toSec())+".png",img_color);
                     // write_observation(new_obslist_[j],std::to_string(stamp.toSec())+"_tartan.txt");
 
                 }
