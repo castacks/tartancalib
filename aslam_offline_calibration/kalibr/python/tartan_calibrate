@@ -545,7 +545,9 @@ def main():
                         )
 
                         for obs in new_obs:
-                            obsdb.addObservation(cam_id,obs)
+                            if obs.hasSuccessfulObservation(): # sometime TartanCalib rejects all original (Kalibr) features
+                                obsdb.addObservation(cam_id,obs)
+
                         obslistTartan[cam_id] = new_obs
 
                     # Saves matlab matrix for use in Babelcalib if outputMatlab option is selected
