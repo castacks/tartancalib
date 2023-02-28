@@ -168,7 +168,7 @@ def parseArgs():
     outputSettings.add_argument('--polar_cutoff', type=float, dest='polarCutoff',default=50, help='Binary cutoff for polar.')
     outputSettings.add_argument('--outputMatlab',action='store_true',dest='outputMatlab',help='Outputs a matlab matrix for use in Babelcalib.')
     outputSettings.add_argument('--save_dir', type=str, dest='saveDir',default='/data/', help='All the data will be logged to this directory.')
-    outputSettings.add_argument('--log_dest', type=str, dest='logDest',default='log', help='Logging for later analysis.')
+    outputSettings.add_argument('--log_dest', type=str, dest='logDest',default='log', help='Name (prefix) of log files.')
     outputSettings.add_argument('--debug_image_dir', type=str, dest='debugImageDir', default='', help='Directory for saving debug images for analysis. Must end with a trailing slash.')
 
     # Print help if no argument is specified
@@ -609,22 +609,28 @@ def main():
                     pl.show()
 
                 # Write results to file
-                resultFile = parsed.saveDir  + parsed.logDest + str(iteration)  + "-camchain.yaml"
+                if (not os.path.exists(parsed.saveDir)):
+                    try:
+                        os.makedirs(parsed.saveDir)
+                    except:
+                        print("[ERROR] Unable to create directory in:{}".format(parsed.saveDir))
+                        raise(OSError)
+                resultFile = os.path.join(parsed.saveDir, parsed.logDest + str(iteration)  + "-camchain.yaml")
                 kcc.saveChainParametersYaml(calibrator, resultFile, graph)
                 print("Results written to file: {0}".format(resultFile))
 
                 # Write detailed results to file
-                resultFileTxt = parsed.saveDir  + parsed.logDest + str(iteration) + "-results-cam.txt"
+                resultFileTxt = os.path.join(parsed.saveDir, parsed.logDest + str(iteration) + "-results-cam.txt")
                 kcc.saveResultTxt(calibrator, filename=resultFileTxt)
                 print("  Detailed results written to file: {0}".format(resultFileTxt))
 
                 # Generate report
-                reportFile = parsed.saveDir + parsed.logDest + str(iteration) +"-report-cam.pdf"
+                reportFile = os.path.join(parsed.saveDir, parsed.logDest + str(iteration) +"-report-cam.pdf")
                 G=None
                 if numCams>1:
                     G=graph
 
-                with open(parsed.saveDir + parsed.logDest+'.pkl', 'wb') as f:
+                with open(os.path.join(parsed.saveDir, parsed.logDest + '.pkl'), 'wb') as f:
                     dill.dump(tartanlogs, f)
 
             except kcc.OptimizationDiverged:
