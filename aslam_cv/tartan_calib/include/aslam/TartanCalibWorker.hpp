@@ -21,6 +21,7 @@
 #include <aslam/cameras/GridDetector.hpp>
 #include <opencv2/core/eigen.hpp>
 #include <boost/assign/list_of.hpp> // for 'map_list_of()'
+#include <boost/filesystem.hpp>
 #include <sm/python/Id.hpp>
 #include <aslam/matplotlibcpp.h>
 #include <ctime>

@@ -657,8 +657,16 @@ namespace aslam
                     
                     cv::Mat cornered_img = get_mat(obslist,true,0.,colors,5.0);
                     aslam::Time stamp = obs.time();
-
-                    cv::imwrite(debug_image_dir + "homography_"+std::to_string(stamp.toSec())+".png",cornered_img);
+                    
+                    if (!debug_image_dir.empty()) {
+                        std::string image_fn = "homography_" + std::to_string(stamp.toSec()) + ".png";
+                        boost::filesystem::path image_folder(debug_image_dir);
+                        if (boost::filesystem::exists(image_folder)) {
+                            boost::filesystem::path image_file(image_fn);
+                            boost::filesystem::path image_path = image_folder / image_file;
+                            cv::imwrite(image_path.string(), cornered_img);
+                        }
+                    }
                 }
             }
         }
@@ -713,7 +721,15 @@ namespace aslam
         
                             
                             cv::Mat color_img = get_mat(obs,false,0.,colors,5.0);
-                            cv::imwrite(debug_image_dir + "frame_"+std::to_string(stamp.toSec())+"_original.png",color_img);
+                            if (!debug_image_dir.empty()) {
+                                std::string image_fn = "frame_" + std::to_string(stamp.toSec()) + "_original.png";
+                                boost::filesystem::path image_folder(debug_image_dir);
+                                if (boost::filesystem::exists(image_folder)) {
+                                    boost::filesystem::path image_file(image_fn);
+                                    boost::filesystem::path image_path = image_folder / image_file;
+                                    cv::imwrite(image_path.string(), color_img);
+                                }
+                            }
                         }
                         
                         break;
@@ -760,7 +776,15 @@ namespace aslam
                             temp_img.copyTo(img_total(cv::Rect(img_size,img_size,img_size,img_size)));
                             
                             aslam::Time stamp = obslist_[i].time();
-                            cv::imwrite(debug_image_dir + "frame_"+std::to_string(stamp.toSec())+"_pinhole.png",img_total);
+                            if (!debug_image_dir.empty()) {
+                                std::string image_fn = "frame_" + std::to_string(stamp.toSec()) + "_pinhole.png";
+                                boost::filesystem::path image_folder(debug_image_dir);
+                                if (boost::filesystem::exists(image_folder)) {
+                                    boost::filesystem::path image_file(image_fn);
+                                    boost::filesystem::path image_path = image_folder / image_file;
+                                    cv::imwrite(image_path.string(), img_total);                      
+                                }                              
+                            }
                         }
 
                         break;
@@ -823,13 +847,21 @@ namespace aslam
                         {
                             for (int j=0; j<num_views_; j++)
                             {
-                            obslist.clear();
-                            cv::Mat temp_img;
-                            obslist.push_back(reprojection_wrappers_[j].obslist_[i]);
-                            temp_img = get_mat(obslist,false,0.,colors,2.0);
+                                obslist.clear();
+                                cv::Mat temp_img;
+                                obslist.push_back(reprojection_wrappers_[j].obslist_[i]);
+                                temp_img = get_mat(obslist,false,0.,colors,2.0);
 
-                            aslam::Time stamp = obslist_[i].time();
-                            cv::imwrite(debug_image_dir + "frame_"+std::to_string(stamp.toSec())+"_projection_"+std::to_string(j)+".png",temp_img);
+                                aslam::Time stamp = obslist_[i].time();
+                                if (!debug_image_dir.empty()) {
+                                    std::string image_fn = "frame_" + std::to_string(stamp.toSec()) + "_projection_" + std::to_string(j) + ".png";
+                                    boost::filesystem::path image_folder(debug_image_dir);
+                                    if (boost::filesystem::exists(image_folder)) {
+                                        boost::filesystem::path image_file(image_fn);
+                                        boost::filesystem::path image_path = image_folder / image_file;
+                                        cv::imwrite(image_path.string(), temp_img);                                    
+                                    }
+                                }
                             }
             
                         }
@@ -860,8 +892,15 @@ namespace aslam
                         const std::tm calendar_time = *std::localtime( std::addressof(now) ) ;
 
                         cv::Mat color_img = get_mat(obs,false,0.,colors,5.0);
-                        cv::imwrite(debug_image_dir + "all_points_"+std::to_string(calendar_time.tm_hour)+"_"+std::to_string(calendar_time.tm_min)+"_"+std::to_string(calendar_time.tm_sec)+".png",color_img);
-
+                        if (!debug_image_dir.empty()) {
+                            std::string image_fn = "all_points_" + std::to_string(calendar_time.tm_hour) + "_" + std::to_string(calendar_time.tm_min) + "_" + std::to_string(calendar_time.tm_sec) + ".png";
+                            boost::filesystem::path image_folder(debug_image_dir);
+                            if (boost::filesystem::exists(image_folder)) {
+                                boost::filesystem::path image_file(image_fn);
+                                boost::filesystem::path image_path = image_folder / image_file;
+                                cv::imwrite(image_path.string(), color_img);                                    
+                            }                            
+                        }
                         break;
                     }
                     
