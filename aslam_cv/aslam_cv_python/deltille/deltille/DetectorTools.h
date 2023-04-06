@@ -189,7 +189,7 @@ void stretchIntensities(cv::InputArray input, cv::OutputArray output);
 template <typename FloatPoint>
 void subpixel_marker(cv::Mat &img, const FloatPoint &pt, float sz,
                      const cv::Scalar &color, int thickness = 1,
-                     int lineType = CV_AA) {
+                     int lineType = cv::LINE_AA) {
   const int shift = 16;
   const float ss = (1 << shift);
   cv::rectangle(img, cv::Point(int((pt.x - sz) * ss), int((pt.y - sz) * ss)),
@@ -200,7 +200,7 @@ void subpixel_marker(cv::Mat &img, const FloatPoint &pt, float sz,
 template <typename FloatPoint>
 void subpixel_line(cv::Mat &img, const FloatPoint &pt1, const FloatPoint &pt2,
                    const cv::Scalar &color, int thickness = 1,
-                   int lineType = CV_AA) {
+                   int lineType = cv::LINE_AA) {
   const int shift = 16;
   const float ss = (1 << shift);
   cv::line(img, cv::Point(int(pt1.x * ss), int(pt1.y * ss)),

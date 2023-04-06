@@ -16,6 +16,7 @@
 //#include "apriltags/Tag25h9.h"
 //#include "apriltags/Tag36h9.h"
 #include "apriltags/Tag36h11.h"
+#include <deltille/target_detector.h>
 
 namespace aslam {
 namespace cameras {
