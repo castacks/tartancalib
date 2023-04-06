@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <name>deltille</name>
+  <description>deltille for tartancalib</description>
+  <version>0.0.1</version>
+  <maintainer email="siheng.teng@gmail.com">Siheng Teng</maintainer>
+  <author>Hyowon Ha, Michal Perdoch, Hatem Alismail, In So Kweon, Yaser Sheikh</author>
+  <license>LGPL-2.1 license</license>
+  <buildtool_depend>catkin</buildtool_depend>
+  <build_depend>eigen</build_depend>
+  <build_depend>libopencv-dev</build_depend>
+  <build_depend>libv4l-dev</build_depend>
+</package>
