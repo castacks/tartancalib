@@ -292,7 +292,7 @@ void drawCheckerboardCornersOnly(cv::Mat &result, const BoardObservation &obs,
                 if (id1 != -1 && id2 != -1)
                 {
                     const cv::Point2f &s1 = corners[id1], &s2 = corners[id2];
-                   // cv::line(result, cv::Point(s1.x * ss, s1.y * ss), cv::Point(s2.x * ss, s2.y * ss), color, thickness, CV_AA, shift);
+                   // cv::line(result, cv::Point(s1.x * ss, s1.y * ss), cv::Point(s2.x * ss, s2.y * ss), color, thickness, cv::LINE_AA, shift);
                 }
 #endif
       }

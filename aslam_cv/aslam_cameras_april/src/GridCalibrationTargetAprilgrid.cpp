@@ -8,7 +8,6 @@
 #include <sm/assert_macros.hpp>
 #include <sm/logging.hpp>
 #include <aslam/cameras/GridCalibrationTargetAprilgrid.hpp>
-#include "deltille/PolynomialSaddleDetectorContext.h"
 
 namespace aslam {
 namespace cameras {

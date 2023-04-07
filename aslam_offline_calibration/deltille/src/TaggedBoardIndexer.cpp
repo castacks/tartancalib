@@ -43,20 +43,20 @@ namespace calibration {
 using DelTag = Triangle<cv::Point2f>;
 using AprilTag = Quadangle<cv::Point2f>;
 
-const AprilTags::TagCodes &tagFamilyNameToCodes(const std::string &family) {
+const deltille::AprilTags::TagCodes &tagFamilyNameToCodes(const std::string &family) {
   if (family == "t16h5")
-    return AprilTags::tagCodes16h5;
+    return deltille::AprilTags::tagCodes16h5;
   else if (family == "t25h7")
-    return AprilTags::tagCodes25h7;
+    return deltille::AprilTags::tagCodes25h7;
   else if (family == "t25h9")
-    return AprilTags::tagCodes25h9;
+    return deltille::AprilTags::tagCodes25h9;
   else if (family == "t36h9")
-    return AprilTags::tagCodes36h9;
+    return deltille::AprilTags::tagCodes36h9;
   else if (family == "t36h11")
-    return AprilTags::tagCodes36h11;
+    return deltille::AprilTags::tagCodes36h11;
   else {
     printf("Unknown family %s, defaulting to t36h11\n", family.c_str());
-    return AprilTags::tagCodes36h11;
+    return deltille::AprilTags::tagCodes36h11;
   }
 }
 
@@ -1010,10 +1010,10 @@ bool TaggedBoardIndexer::detectDeltaTag(const cv::Mat &img,
 #ifdef DEBUG_REINDEXING
       cv::line(dbg, cv::Point(p[0].x * 65536, p[0].y * 65536),
                cv::Point(p[1].x * 65536, p[1].y * 65536), cv::Scalar(0, 0, 255),
-               2, CV_AA, 16);
+               2, cv::LINE_AA, 16);
       cv::line(dbg, cv::Point(p[0].x * 65536, p[0].y * 65536),
                cv::Point(p[2].x * 65536, p[2].y * 65536), cv::Scalar(0, 255, 0),
-               2, CV_AA, 16);
+               2, cv::LINE_AA, 16);
 #endif
     } else {
       // unknown tag... ignore it...

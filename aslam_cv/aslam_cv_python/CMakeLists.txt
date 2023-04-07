@@ -5,7 +5,6 @@ set(CMAKE_CXX_STANDARD 14)
 
 # libvis
 
-
 set(LIBVIS_FILES
   libvis/src/libvis/camera.h
   libvis/src/libvis/camera_frustum_opengl.h
@@ -115,6 +114,7 @@ find_package(catkin REQUIRED COMPONENTS
   aslam_time
   aslam_cv_serialization
   aslam_cameras_april
+  deltille
 )
 
 catkin_package(

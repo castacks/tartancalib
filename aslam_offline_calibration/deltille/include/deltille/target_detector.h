@@ -85,13 +85,16 @@ static inline int
 FindBoards(const cv::Mat &I, const cv::Size &board_size,
            std::vector<orp::calibration::BoardObservation> &boards) {
   switch (I.type()) {
-  case cv::DataType<uint8_t>::type:
-    return FindBoardsHelper<SaddlePointType, FloatImageType, uint8_t>(
-        I, board_size, boards);
-  case cv::DataType<uint16_t>::type:
-    return FindBoardsHelper<SaddlePointType, FloatImageType, uint16_t>(
-        I, board_size, boards);
-  case cv::DataType<uint32_t>::type:
+  // case cv::DataType<uint8_t>::type:
+  //   return FindBoardsHelper<SaddlePointType, FloatImageType, uint8_t>(
+  //       I, board_size, boards);
+  // case cv::DataType<uint16_t>::type:
+  //   return FindBoardsHelper<SaddlePointType, FloatImageType, uint16_t>(
+  //       I, board_size, boards);
+  // case cv::DataType<uint32_t>::type:
+  //   return FindBoardsHelper<SaddlePointType, FloatImageType, uint32_t>(
+  //       I, board_size, boards);
+  case cv::DataType<int>::type:
     return FindBoardsHelper<SaddlePointType, FloatImageType, uint32_t>(
         I, board_size, boards);
   case cv::DataType<float>::type:

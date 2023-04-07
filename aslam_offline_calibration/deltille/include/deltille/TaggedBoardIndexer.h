@@ -52,7 +52,7 @@ struct BoardDefinition {
   std::shared_ptr<TagFamily> detector;
 };
 
-const AprilTags::TagCodes &tagFamilyNameToCodes(const std::string &family);
+const deltille::AprilTags::TagCodes &tagFamilyNameToCodes(const std::string &family);
 
 void readBoardDefinitions(std::istream &in, std::vector<BoardDefinition> &defs,
                           AprilTagFamilies &detectors);

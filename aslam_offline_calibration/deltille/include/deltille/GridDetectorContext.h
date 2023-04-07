@@ -231,16 +231,16 @@ public:
     cv::line(
         DEBUG, cv::Point(pt0.x * 65536, pt0.y * 65536),
         cv::Point((pt0.x + dst_u[i11]) * 65536, (pt0.y + dst_v[i11]) * 65536),
-        cv::Scalar(0, 0, 255), 1, CV_AA, 16);
+        cv::Scalar(0, 0, 255), 1, cv::LINE_AA, 16);
     cv::line(
         DEBUG, cv::Point(pt0.x * 65536, pt0.y * 65536),
         cv::Point((pt0.x + dst_u[pt]) * 65536, (pt0.y + dst_v[pt]) * 65536),
-        cv::Scalar(0, 255, 0), 1, CV_AA, 16);
+        cv::Scalar(0, 255, 0), 1, cv::LINE_AA, 16);
     cv::line(
         DEBUG,
         cv::Point((pt0.x + dst_u[i11]) * 65536, (pt0.y + dst_v[i11]) * 65536),
         cv::Point((pt0.x + dst_u[pt]) * 65536, (pt0.y + dst_v[pt]) * 65536),
-        cv::Scalar(255, 0, 0), 1, CV_AA, 16);
+        cv::Scalar(255, 0, 0), 1, cv::LINE_AA, 16);
     if (maxI - minI < detector_params.rectangle_consistency_threshold)
       printf(
           "Accepting quad candidate: minI: %.3lf, maxI: %.3lf, thresh: %.3lf\n",
@@ -862,7 +862,7 @@ public:
         ++cnt;
         cv::rectangle(DEBUG, cv::Point((pt.x - 3) * 65536, (pt.y - 3) * 65536),
                       cv::Point((pt.x + 3) * 65536, (pt.y + 3) * 65536),
-                      cv::Scalar(255, 0, 0), 1, CV_AA, 16);
+                      cv::Scalar(255, 0, 0), 1, cv::LINE_AA, 16);
       }
     }
     printf("Remaining %d active points\n", cnt);
@@ -906,19 +906,19 @@ public:
         cv::line(DEBUG,
                  cv::Point(pts[quad.i00_].x * 65536, pts[quad.i00_].y * 65536),
                  cv::Point(pts[quad.i10_].x * 65536, pts[quad.i10_].y * 65536),
-                 cv::Scalar(0, 0, 255), 1, CV_AA, 16);
+                 cv::Scalar(0, 0, 255), 1, cv::LINE_AA, 16);
         cv::line(DEBUG,
                  cv::Point(pts[quad.i10_].x * 65536, pts[quad.i10_].y * 65536),
                  cv::Point(pts[quad.i01_].x * 65536, pts[quad.i01_].y * 65536),
-                 cv::Scalar(0, 255, 0), 1, CV_AA, 16);
+                 cv::Scalar(0, 255, 0), 1, cv::LINE_AA, 16);
         cv::line(DEBUG,
                  cv::Point(pts[quad.i01_].x * 65536, pts[quad.i01_].y * 65536),
                  cv::Point(pts[quad.i11_].x * 65536, pts[quad.i11_].y * 65536),
-                 cv::Scalar(255, 0, 0), 1, CV_AA, 16);
+                 cv::Scalar(255, 0, 0), 1, cv::LINE_AA, 16);
         cv::line(DEBUG,
                  cv::Point(pts[quad.i11_].x * 65536, pts[quad.i11_].y * 65536),
                  cv::Point(pts[quad.i00_].x * 65536, pts[quad.i00_].y * 65536),
-                 cv::Scalar(255, 0, 255), 1, CV_AA, 16);
+                 cv::Scalar(255, 0, 255), 1, cv::LINE_AA, 16);
 #endif
         while (true) {
           int offr, offc;

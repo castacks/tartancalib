@@ -45,7 +45,7 @@
 namespace orp {
 namespace calibration {
 
-TagFamily::TagFamily(const AprilTags::TagCodes &tagCodes,
+TagFamily::TagFamily(const deltille::AprilTags::TagCodes &tagCodes,
                      const float blackBorder)
     : blackBorder(blackBorder), bits(tagCodes.bits),
       dimension((int)std::sqrt((float)bits)),

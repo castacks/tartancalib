@@ -13,8 +13,9 @@ find_package(catkin REQUIRED COMPONENTS
   sm_boost
   sm_eigen
   python_module
+  deltille
 )
-find_package(deltille REQUIRED)
+# find_package(deltille REQUIRED)
 find_package(OpenCV REQUIRED)
 find_package(Boost REQUIRED COMPONENTS serialization system)
 find_package(Eigen3 REQUIRED)

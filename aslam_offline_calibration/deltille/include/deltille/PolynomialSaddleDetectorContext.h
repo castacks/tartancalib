@@ -137,7 +137,7 @@ public:
       pt.y = refclust[i].y;
       cv::rectangle(DEBUG, cv::Point((pt.x - 3) * 65536, (pt.y - 3) * 65536),
                     cv::Point((pt.x + 3) * 65536, (pt.y + 3) * 65536),
-                    cv::Scalar(255, 0, 0), 1, CV_AA, 16);
+                    cv::Scalar(255, 0, 0), 1, cv::LINE_AA, 16);
       if (!SaddlePointType::isTriangular)
         refclust[i].plotPolarities(DEBUG, 3.0 / scaling);
     }
@@ -179,7 +179,7 @@ public:
       int sz = scaling * 3;
       cv::rectangle(DEBUG, cv::Point((s1.x - sz) * 65536, (s1.y - sz) * 65536),
                     cv::Point((s1.x + sz) * 65536, (s1.y + sz) * 65536),
-                    cv::Scalar(0, 255, 0), 3.0 / scaling, CV_AA, 16);
+                    cv::Scalar(0, 255, 0), 3.0 / scaling, cv::LINE_AA, 16);
       s1.plotPolarities(DEBUG, 3.0 / scaling);
       cv::putText(DEBUG, std::to_string(i), cv::Point((s1.x + sz), (s1.y + sz)),
                   cv::FONT_HERSHEY_PLAIN, 0.8, cv::Scalar(255, 0, 255));
@@ -255,7 +255,7 @@ private:
     if (img.getMat().channels() == 3)
       // convert to a single channel first, keep original intensity range for
       // now...
-      cvtColor(img, gray_img, CV_RGB2GRAY);
+      cvtColor(img, gray_img, cv::COLOR_RGB2GRAY);
     else
       gray_img = img.getMat();
 

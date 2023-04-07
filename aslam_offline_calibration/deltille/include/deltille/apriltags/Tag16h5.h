@@ -49,6 +49,7 @@
 
 #pragma once
 
+namespace deltille {
 namespace AprilTags {
 
 const unsigned long long t16h5[] = {
@@ -60,4 +61,5 @@ const unsigned long long t16h5[] = {
 
 static const TagCodes tagCodes16h5 =
     TagCodes("t16h5", 16, 5, t16h5, sizeof(t16h5) / sizeof(t16h5[0]));
+}
 }

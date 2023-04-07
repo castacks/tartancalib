@@ -22,6 +22,7 @@
 #include <string>
 #include <vector>
 
+namespace deltille {
 namespace AprilTags {
 
 class TagCodes {
@@ -38,7 +39,8 @@ public:
       : bits(bits), minHammingDistance(minHammingDistance),
         codes(codesA, codesA + num), family(family) {}
 };
-};
+}
+}
 
 namespace orp {
 
@@ -82,7 +84,7 @@ class TagFamily {
 public:
   //! The codes array is not copied internally and so must not be modified
   //! externally.
-  TagFamily(const AprilTags::TagCodes &tagCodes, const float blackBorder);
+  TagFamily(const deltille::AprilTags::TagCodes &tagCodes, const float blackBorder);
 
   void setErrorRecoveryBits(int b);
 
