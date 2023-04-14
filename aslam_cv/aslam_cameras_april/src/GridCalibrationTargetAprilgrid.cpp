@@ -327,8 +327,28 @@ bool GridCalibrationTargetAprilgrid::computeObservationDeltille(
     std::vector<bool> &outCornerObserved, std::string deltilleFp) const {
 
   bool success = true;
+  if (!boost::filesystem::exists(deltilleFp) || !boost::filesystem::is_regular_file(deltilleFp)) {
+    SM_ERROR_STREAM("Error: Invalid .dsc file for Deltille.");
+    return false;
+  }
 
   // detect the tags
+  TargetDetector deltilleDetector(deltilleFp);
+  std::vector<CalibrationCorner> corners;
+
+  cv::Mat debug_image; // for debugging.
+  bool debug = true;
+
+  deltilleDetector.run(image, corners, debug ? &debug_image : nullptr);
+
+  cv::imshow("detection", debug_image);
+  int k = cv::waitKey(100);
+  if (k == ' ') // pause on space
+    k = cv::waitKey(0);
+  if (k == 'q' || k == 27) // quite on 'q' or ESC
+    return false;
+
+  return true;
   std::vector<AprilTags::TagDetection> detections = _tagDetector->extractTags(image);
   /* handle the case in which a tag is identified but not all tag
    * corners are in the image (all data bits in image but border
@@ -382,42 +402,6 @@ bool GridCalibrationTargetAprilgrid::computeObservationDeltille(
   //sort detections by tagId
   std::sort(detections.begin(), detections.end(),
             AprilTags::TagDetection::sortByIdCompare);
-
-  // check for duplicate tagIds (--> if found: wild Apriltags in image not belonging to calibration target)
-  // (only if we have more than 1 tag...)
-  if (detections.size() > 1) {
-    for (unsigned i = 0; i < detections.size() - 1; i++)
-      if (detections[i].id == detections[i + 1].id) {
-        //show the duplicate tags in the image
-        cv::destroyAllWindows();
-        cv::namedWindow("Wild Apriltag detected. Hide them!");
-        cv::startWindowThread();
-
-        cv::Mat imageCopy = image.clone();
-        cv::cvtColor(imageCopy, imageCopy, cv::COLOR_GRAY2RGB);
-
-        //mark all duplicate tags in image
-        for (int j = 0; i < detections.size() - 1; i++) {
-          if (detections[j].id == detections[j + 1].id) {
-            detections[j].draw(imageCopy);
-            detections[j + 1].draw(imageCopy);
-          }
-        }
-
-        cv::putText(imageCopy, "Duplicate Apriltags detected. Hide them.",
-                    cv::Point(50, 50), cv::FONT_HERSHEY_SIMPLEX, 0.8,
-                    CV_RGB(255,0,0), 2, 8, false);
-        cv::putText(imageCopy, "Press enter to exit...", cv::Point(50, 80),
-                    cv::FONT_HERSHEY_SIMPLEX, 0.8, CV_RGB(255,0,0), 2, 8, false);
-        cv::imshow("Duplicate Apriltags detected. Hide them", imageCopy);  // OpenCV call
-
-        // and exit
-        SM_FATAL_STREAM("\n[ERROR]: Found apriltag not belonging to calibration board. Check the image for the tag and hide it.\n");
-
-        cv::waitKey();
-        exit(0);
-      }
-  }
 
   // convert corners to cv::Mat (4 consecutive corners form one tag)
   /// point ordering here

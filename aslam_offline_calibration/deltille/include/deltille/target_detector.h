@@ -32,6 +32,7 @@
 
 #include <deltille/GridDetectorContext.h>
 #include <deltille/TaggedBoardIndexer.h>
+#include <opencv2/core/core.hpp>
 
 
 /**
@@ -84,13 +85,14 @@ template <class SaddlePointType, class FloatImageType = double>
 static inline int
 FindBoards(const cv::Mat &I, const cv::Size &board_size,
            std::vector<orp::calibration::BoardObservation> &boards) {
+  // std::cout << "I.type=" << I.type() << std::endl;
   switch (I.type()) {
-  // case cv::DataType<uint8_t>::type:
-  //   return FindBoardsHelper<SaddlePointType, FloatImageType, uint8_t>(
-  //       I, board_size, boards);
-  // case cv::DataType<uint16_t>::type:
-  //   return FindBoardsHelper<SaddlePointType, FloatImageType, uint16_t>(
-  //       I, board_size, boards);
+  case cv::DataType<uint8_t>::type:
+    return FindBoardsHelper<SaddlePointType, FloatImageType, uint8_t>(
+        I, board_size, boards);
+  case cv::DataType<uint16_t>::type:
+    return FindBoardsHelper<SaddlePointType, FloatImageType, uint16_t>(
+        I, board_size, boards);
   // case cv::DataType<uint32_t>::type:
   //   return FindBoardsHelper<SaddlePointType, FloatImageType, uint32_t>(
   //       I, board_size, boards);
@@ -154,11 +156,12 @@ public:
 
     corners.clear();
     corners.reserve(boards.size() * board_size.area());
-    for (auto &b : boards) {
+    for (auto &b : boards) { 
       for (size_t i = 0; i < b.corner_locations.size(); ++i) {
         const auto &c = b.corner_locations[i];
         corners.emplace_back(c.x, c.y, b.board_id, int(i), b.indexed);
       }
+      std::cout << std::endl;
     }
 
     if (debug_image) {

@@ -17,6 +17,7 @@
 //#include "apriltags/Tag36h9.h"
 #include "apriltags/Tag36h11.h"
 #include "deltille/target_detector.h"
+#include <boost/filesystem.hpp>
 
 namespace aslam {
 namespace cameras {
