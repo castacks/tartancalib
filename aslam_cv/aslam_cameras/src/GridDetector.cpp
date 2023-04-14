@@ -91,13 +91,21 @@ bool GridDetector::findTarget(const cv::Mat & image,
 
 bool GridDetector::findTargetNoTransformation(const cv::Mat & image, const aslam::Time & stamp,
     GridCalibrationTargetObservation & outObservation) const {
+  bool use_deltille = !deltilleFp.empty();
   bool success = false;
 
   // Extract the calibration target corner points
   Eigen::MatrixXd cornerPoints;
   std::vector<bool> validCorners;
-  success = _target->computeObservation(image, cornerPoints, validCorners);
 
+  if (use_deltille) {
+    success = _target->computeObservationDeltille(image, cornerPoints, validCorners, deltilleFp);
+  }
+
+  else {
+    success = _target->computeObservation(image, cornerPoints, validCorners);
+  }
+  
   // Set the image, target, and timestamp regardless of success.
   outObservation.setTarget(_target);
   outObservation.setImage(image);

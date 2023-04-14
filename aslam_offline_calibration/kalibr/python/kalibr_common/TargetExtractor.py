@@ -11,7 +11,7 @@ import time
 import copy
 import cv2
 
-def multicoreExtractionWrapper(detector, taskq, resultq, clearImages, noTransformation):    
+def multicoreExtractionWrapper(detector, taskq, resultq, clearImages, noTransformation, deltilleFP):    
     while 1:
         try:
             task = taskq.get_nowait()
@@ -20,8 +20,10 @@ def multicoreExtractionWrapper(detector, taskq, resultq, clearImages, noTransfor
         idx = task[0]
         stamp = task[1]
         image = task[2]
+        detector.setDeltilleFp(deltilleFP)
+
         if noTransformation:
-            success, obs = detector.findTargetNoTransformation(stamp, np.array(image))
+                success, obs = detector.findTargetNoTransformation(stamp, np.array(image))
         else:
             success, obs = detector.findTarget(stamp, np.array(image))
             
@@ -30,8 +32,8 @@ def multicoreExtractionWrapper(detector, taskq, resultq, clearImages, noTransfor
         if success:
             resultq.put( (obs, idx) )
 
-def extractCornersFromDataset(dataset, detector, multithreading=False, numProcesses=None, clearImages=True, noTransformation=False):
-    print("Extracting calibration target corners")    
+def extractCornersFromDataset(dataset, detector, multithreading=False, numProcesses=None, clearImages=True, noTransformation=False, deltilleFP=""):    
+    print("Extracting calibration target corners")
     targetObservations = []
     numImages = dataset.numImages()
     
@@ -54,7 +56,7 @@ def extractCornersFromDataset(dataset, detector, multithreading=False, numProces
             plist=list()
             for pidx in range(0, numProcesses):
                 detector_copy = copy.copy(detector)
-                p = multiprocessing.Process(target=multicoreExtractionWrapper, args=(detector_copy, taskq, resultq, clearImages, noTransformation, ))
+                p = multiprocessing.Process(target=multicoreExtractionWrapper, args=(detector_copy, taskq, resultq, clearImages, noTransformation, deltilleFP))
                 p.start()
                 plist.append(p)
             

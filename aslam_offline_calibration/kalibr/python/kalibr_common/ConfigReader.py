@@ -621,7 +621,7 @@ class CalibrationTargetParameters(ParametersBase):
                             'tagSize': tagSize,
                             'tagSpacing': tagSpacing,
                             'targetType': targetType}
-            
+
         return targetParams
         
     ###################################################

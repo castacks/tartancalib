@@ -150,6 +150,7 @@ def parseArgs():
     groupTartan.add_argument('--symmetry-refinement', action='store_true', dest='symmetry_refinement', help='Include symmetry refinement method')
     groupTartan.add_argument('--symmetry-edge-threshold', type=float, default=10.0, dest='symmetry_edge_threshold', help='')
     groupTartan.add_argument('--export-dataset-dir', type=str, default="", dest="export_dataset_dir", help='Filepath to export binary usable in generic camera model referenced in "Why Having 10000..." paper.')
+    groupTartan.add_argument('--deltille-dsc-dir', type=str, default="", dest="deltille_dir", help='Filepath to Deltille .dsc file; if provided, uses Deltille instead of AprilTags for detection')
 
     outlierSettings = parser.add_argument_group('Outlier filtering options')
     outlierSettings.add_argument('--no-outliers-removal', action='store_false', default=True, dest='removeOutliers', help='Disable corner outlier filtering')
@@ -222,6 +223,7 @@ def main():
     else:
         sm.setLoggingLevel(sm.LoggingLevel.Info)
 
+    # Handling l_fov, l_pose and l_res:
     # Argparse has issues with default value being a list which requires additional attention (https://bugs.python.org/issue16399).
     if parsed.l_fov is None:
         parsed.l_fov = DEFAULT_FOV
@@ -229,7 +231,14 @@ def main():
         parsed.l_pose = DEFAULT_POSE
     if parsed.l_res is None:
         parsed.l_res = DEFAULT_RESOLUTION
-    
+
+    # Setting up numpy arrays for TartanCalibWorker
+    # TODO: Implement checks for number of values / if np arrayable.
+    fovs = np.array(parsed.l_fov)
+    poses = np.array(parsed.l_pose)
+    resolutions = np.array(parsed.l_res)
+
+    # Handling l_proj / l_debug
     # Un-nesting list if arguments were supplied from argparser as argparser always nests list.
     if parsed.l_proj is None:
         projections = DEFAULT_PROJECTION
@@ -239,12 +248,6 @@ def main():
         debug_modes = DEFAULT_DEBUG_MODES
     else:
         debug_modes = parsed.l_debug[0]
-
-    # Setting up numpy arrays for TartanCalibWorker
-    # TODO: Implement checks for number of values / if np arrayable.
-    fovs = np.array(parsed.l_fov)
-    poses = np.array(parsed.l_pose)
-    resolutions = np.array(parsed.l_res)
 
     # Checking for validity in projections / debug_modes.
     for projection in projections:
@@ -280,9 +283,14 @@ def main():
 
             #extract the targets
             multithreading = not (parsed.verbose or parsed.showextraction)
-            observations = kc.extractCornersFromDataset(cam.dataset, cam.ctarget.detector,
-                                                        multithreading=multithreading, clearImages=False,
-                                                        noTransformation=True)
+            observations = kc.extractCornersFromDataset(
+                cam.dataset,
+                cam.ctarget.detector,
+                multithreading=multithreading,
+                clearImages=False,
+                noTransformation=True,
+                deltilleFP=parsed.deltille_dir)
+
             #populate the database
             for obs in observations:
                 obsdb.addObservation(cam_id, obs)
@@ -290,12 +298,11 @@ def main():
             obslist.append(observations)
             #initialize the intrinsics
             if not cam.initGeometryFromObservations(observations):
-                raise RuntimeError("Could not initialize the intrinsics for camera with topic: {0}. Try to use --verbose and check whether the calibration target extraction is successful.".format(topic))
+                raise RuntimeError("Could not initialize the intrinsics for camera with topic: {0}. Try to use \
+                    --verbose and check whether the calibration target extraction is successful.".format(topic))
 
             print("\tProjection initialized to: %s" % cam.geometry.projection().getParameters().flatten())
             print("\tDistortion initialized to: %s" % cam.geometry.projection().distortion().getParameters().flatten())
-
-
 
             cameraList.append(cam)
         else:
@@ -344,7 +351,6 @@ def main():
                     print("initialized cam{0} to:".format(cam_idx))
                     print("\t projection cam{0}: {1}".format(cam_idx, cam.geometry.projection().getParameters().flatten()))
                     print("\t distortion cam{0}: {1}".format(cam_idx, cam.geometry.projection().distortion().getParameters().flatten()))
-
 
                 print("initializing calibrator")
                 polar_object = kcc.PolarWeighting()
@@ -402,8 +408,6 @@ def main():
                     T_tc_guess = graph.getTargetPoseGuess(timestamp, cameraList, est_baselines)
                     success = False
                     success = calibrator.addTargetView(obs_tuple, T_tc_guess,parsed.forceAll)
-
-
 
                     #display process
                     if (verbose or (view_id % 25) == 0) and calibrator.estimator.getNumBatches()>0 and view_id>1:
@@ -517,8 +521,6 @@ def main():
                             if len(batches_to_check)>1:
                                 progress_filter.sample()
 
-
-
                 #final output
                 print("")
                 print("")
@@ -537,7 +539,8 @@ def main():
                         cam = cameraList[cam_id]
                         # This passes all configuration arguments and calls the TartanCalibWorker through CameraGeometry.getProjections
                         # TODO: Parameters should ideally be passed as a struct.
-                        tartanParams = [parsed.min_init_corners_autocomplete,
+                        tartanParams = [
+                            parsed.min_init_corners_autocomplete,
                             parsed.min_tag_size_autocomplete,
                             parsed.correction_threshold,
                             parsed.min_resize_window_size,

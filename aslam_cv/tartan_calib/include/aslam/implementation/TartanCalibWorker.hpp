@@ -124,12 +124,12 @@ namespace aslam
         {  
             cv::Point2f distorted_pixel_cv;
             Eigen::Vector3d outPoint;
-            Eigen::VectorXd keypoint(2),target_original(4),target_transformed(4);
+            Eigen::VectorXd keypoint(2), target_original(4), target_transformed(4);
             Eigen::MatrixXd all_target_original,all_target_transformed;
 
             all_target_original = target_->points().transpose();
 
-            all_target_original.conservativeResize(4,all_target_original.cols());
+            all_target_original.conservativeResize(4, all_target_original.cols());
             
 
             // the board definition only contains the corners of tags, but there is another corner at the corners of the board
@@ -502,44 +502,48 @@ namespace aslam
                                         }
                                     }
                                 }
-                                else
-                                {
-                                    // cv::circle(img_color, cv::Point2f(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1)),0, cv::Scalar(0,0,255),1); 
-
-                                    cv::cornerSubPix(reprojection.obslist_[j].image(), tagCorners, cv::Size(refine_window_size, refine_window_size ), cv::Size(-1, -1),cv::TermCriteria(cv::TermCriteria::COUNT|cv::TermCriteria::EPS,40,0.03));        
-
-                                    bool found_before = false;
-                                    int found_idx = 0;
-
-                                    for (int q = 0; q < outCornerIdx_.size() ; q++)
+                                    else
                                     {
-                                        int corner_idx = outCornerIdx_[q];
-                                        if (corner_idx == index_reprojection)
+                                        // cv::circle(img_color, cv::Point2f(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1)),0, cv::Scalar(0,0,255),1); 
+
+                                        cv::cornerSubPix(
+                                            reprojection.obslist_[j].image(),
+                                            tagCorners,
+                                            cv::Size(refine_window_size, refine_window_size),
+                                            cv::Size(-1, -1),
+                                            cv::TermCriteria(cv::TermCriteria::COUNT | cv::TermCriteria::EPS, 40, 0.03)
+                                        );        
+
+                                        bool found_before = false;
+                                        int found_idx = 0;
+
+                                        for (int q = 0; q < outCornerIdx_.size() ; q++)
                                         {
-                                            found_before = true;
-                                            found_idx = q;
+                                            int corner_idx = outCornerIdx_[q];
+                                            if (corner_idx == index_reprojection)
+                                            {
+                                                found_before = true;
+                                                found_idx = q;
+                                            }
                                         }
-                                    }
-
                                         
-                                    
-                                    // cv::circle(img_color, cv::Point2f(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1)),0, cv::Scalar(0,255,0),1); 
-                                    // // cv::rectangle(img_color,cv::Point2f(tagCorners.at<float>(0,0)-refine_window_size,tagCorners.at<float>(0,1)-refine_window_size),cv::Point2f(tagCorners.at<float>(0,0)+refine_window_size,tagCorners.at<float>(0,1)+refine_window_size),cv::Scalar(0,0,255),2);
+                                        // cv::circle(img_color, cv::Point2f(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1)),0, cv::Scalar(0,255,0),1); 
+                                        // // cv::rectangle(img_color,cv::Point2f(tagCorners.at<float>(0,0)-refine_window_size,tagCorners.at<float>(0,1)-refine_window_size),cv::Point2f(tagCorners.at<float>(0,0)+refine_window_size,tagCorners.at<float>(0,1)+refine_window_size),cv::Scalar(0,0,255),2);
 
-                                    // if (found_before)
-                                    // {
-                                    //     // cv::circle(img_color, cv::Point2f(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1)),5, cv::Scalar(0,164,255),2); 
-                                    //     cv::circle(img_color, cv::Point2f(outCornerList_imageframe[found_idx].x,outCornerList_imageframe[found_idx].y),5, cv::Scalar(0,164,255),2); 
-                                    //     cv::circle(img_color, cv::Point2f(outCornerList_imageframe[found_idx].x,outCornerList_imageframe[found_idx].y), 0,cv::Scalar(0,0,255),2); 
-                                    // }
-                                    // else
-                                    // {
-                                    //     cv::circle(img_color, cv::Point2f(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1)),5, cv::Scalar(0,255,0),2); 
-                                    // }
-                                    
-                                    Eigen::Vector2d end_position_eigen = Eigen::Vector2d(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1));
-                                    new_obslist_[j].updateImagePoint(index_reprojection,end_position_eigen);
-                                }
+                                        // if (found_before)
+                                        // {
+                                        //     // cv::circle(img_color, cv::Point2f(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1)),5, cv::Scalar(0,164,255),2); 
+                                        //     cv::circle(img_color, cv::Point2f(outCornerList_imageframe[found_idx].x,outCornerList_imageframe[found_idx].y),5, cv::Scalar(0,164,255),2); 
+                                        //     cv::circle(img_color, cv::Point2f(outCornerList_imageframe[found_idx].x,outCornerList_imageframe[found_idx].y), 0,cv::Scalar(0,0,255),2); 
+                                        // }
+                                        // else
+                                        // {
+                                        //     cv::circle(img_color, cv::Point2f(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1)),5, cv::Scalar(0,255,0),2); 
+                                        // }
+                                        
+                                        Eigen::Vector2d end_position_eigen = Eigen::Vector2d(tagCorners.at<float>(0,0),tagCorners.at<float>(0,1));
+                                        new_obslist_[j].updateImagePoint(index_reprojection,end_position_eigen);
+                                    }
 
                                 }
 
@@ -647,7 +651,7 @@ namespace aslam
                     }
 
                     cv::Mat warped_img;
-                    cv::warpPerspective(obs.image(),warped_img,reprojection.homography_[i],obs.image().size());
+                    cv::warpPerspective(obs.image(),warped_img,reprojection.homography_[i], obs.image().size());
                     obs.setImage(warped_img);
                     gd_.findTargetNoTransformation(obs.image(),obs);
 
@@ -954,27 +958,28 @@ namespace aslam
         template< typename C>
         void TartanCalibWorker<C>::project_to_original_image(void)
         {
-            for (int i=0; i<num_frames_; i++ )
+            for (int i = 0; i < num_frames_; i++ )
             {
-                for (auto reprojection: reprojection_wrappers_ )
+                for (auto reprojection : reprojection_wrappers_)
                 {
                     obs_ = reprojection.obslist_[i];
                     obs_.getCornersIdx(outCornerIdx_);
 
-
-                    if (reprojection.reproj_type_ == ReprojectionMode::pinhole || reprojection.reproj_type_==ReprojectionMode::homography)
+                    if (reprojection.reproj_type_ == ReprojectionMode::pinhole || 
+                        reprojection.reproj_type_ == ReprojectionMode::homography)
                     {
-                        cv::Point2f img_center(reprojection.resolution_.coeff(1,0)/2.,reprojection.resolution_.coeff(0,0)/2.);
+                        cv::Point2f img_center(
+                            reprojection.resolution_.coeff(1,0) / 2.,
+                            reprojection.resolution_.coeff(0,0) / 2.);
+                        
                         std::vector<cv::Point2f> outCornerList;
                         obs_.getCornersImageFrame(outCornerList);
                         
                         num_corners_ = outCornerList.size();
-                        xyz_.resize(3,num_corners_);
+                        xyz_.resize(3, num_corners_);
                         cv::Point2f corner;
 
-
-
-                        if (reprojection.reproj_type_ == ReprojectionMode::homography && num_corners_ >0 )
+                        if (reprojection.reproj_type_ == ReprojectionMode::homography && num_corners_ > 0)
                         {
                             std::vector<cv::Point2f> pinholePoints;
                             cv::perspectiveTransform(outCornerList,pinholePoints,reprojection.homography_[i].inv());
@@ -985,20 +990,19 @@ namespace aslam
                         {
                             corner = outCornerList[k];
 
-
                             xyz_(0,k) = corner.x;
                             xyz_(1,k) = corner.y;
                         }
 
-                        xyz_.row(0) -= img_center.x*Eigen::Matrix<float, 1,Eigen::Dynamic>::Ones(1,num_corners_);
-                        xyz_.row(1) -= img_center.y*Eigen::Matrix<float, 1,Eigen::Dynamic>::Ones(1,num_corners_);
+                        xyz_.row(0) -= img_center.x * Eigen::Matrix<float, 1,Eigen::Dynamic>::Ones(1, num_corners_);
+                        xyz_.row(1) -= img_center.y * Eigen::Matrix<float, 1,Eigen::Dynamic>::Ones(1, num_corners_);
 
-                        xyz_.row(0)*=((tan(reprojection.fov_.coeff(0,0) / 2.0 / 180 * PI))/img_center.x);
-                        xyz_.row(1)*=((tan(reprojection.fov_.coeff(1,0) / 2.0 / 180 * PI))/img_center.y);
-                        xyz_.row(2)=Eigen::Matrix<float, 1,Eigen::Dynamic>::Ones(1,num_corners_);
+                        xyz_.row(0) *= ((tan(reprojection.fov_.coeff(0,0) / 2.0 / 180 * PI))/img_center.x);
+                        xyz_.row(1) *= ((tan(reprojection.fov_.coeff(1,0) / 2.0 / 180 * PI))/img_center.y);
+                        xyz_.row(2) = Eigen::Matrix<float, 1,Eigen::Dynamic>::Ones(1,num_corners_);
                         
                         compute_rotation(reprojection.pose_);
-                        xyz_ = rot_mat_*xyz_;
+                        xyz_ = rot_mat_ * xyz_;
                         
                         for (size_t k=0; k<num_corners_; k++)
                         {
@@ -1017,7 +1021,7 @@ namespace aslam
                     }
                 }
             }
-            for (auto &reprojection: reprojection_wrappers_ )
+            for (auto &reprojection : reprojection_wrappers_)
             {
                 if (reprojection.reproj_type_ == ReprojectionMode::cornerpredictor)
                 {
@@ -1033,11 +1037,14 @@ namespace aslam
             {
                 for (auto &reprojection: reprojection_wrappers_ )
                 {
-                    if (reprojection.reproj_type_ == ReprojectionMode::homography || reprojection.reproj_type_ == ReprojectionMode::pinhole || reprojection.reproj_type_ ==  ReprojectionMode::cornerpredictor )
+                    if (reprojection.reproj_type_ == ReprojectionMode::homography || 
+                        reprojection.reproj_type_ == ReprojectionMode::pinhole ||
+                        reprojection.reproj_type_ ==  ReprojectionMode::cornerpredictor)
                     {
                         obs_.setImage(reprojection.obslist_[i].image());
-                        gd_.findTargetNoTransformation(reprojection.obslist_[i].image(),obs_);
-                        obs_.setTime(obslist_[i].time());
+                        gd_.findTargetNoTransformation(reprojection.obslist_[i].image(), obslist_[i].time(), obs_);
+                        // gd_.findTargetNoTransformation(reprojection.obslist_[i].image(), obs_);
+                        // obs_.setTime(obslist_[i].time());
                         reprojection.obslist_[i] = obs_;                        
                     }
                 }
@@ -1047,7 +1054,7 @@ namespace aslam
             {
                 // if a homography was requested we'll try to find the homography here
                 // at a later point when merging in the corners we check this again and use the corners
-                if(reprojection.reproj_type_ == ReprojectionMode::homography)
+                if (reprojection.reproj_type_ == ReprojectionMode::homography)
                 {
                     homography_reprojection(reprojection);
                 }
@@ -1059,23 +1066,23 @@ namespace aslam
         { 
             for (int i=0; i<num_frames_; i++)
             {
-                std::vector<cv::Mat> frame_reprojections;
                 for (auto &reprojection: reprojection_wrappers_ )
                 {
-                    if(reprojection.reproj_type_ == ReprojectionMode::homography || reprojection.reproj_type_ == ReprojectionMode::pinhole)
+                    if (reprojection.reproj_type_ == ReprojectionMode::homography || 
+                        reprojection.reproj_type_ == ReprojectionMode::pinhole)
                     {
-                    // pinhole reprojection
-                    cv::Mat undistorted_image_;
-                    cv::remap(reprojection.obslist_[i].image(),undistorted_image_,reprojection.map_x_,reprojection.map_y_,cv::INTER_LINEAR,
-                    cv::BORDER_CONSTANT);
-                    reprojection.obslist_[i].setImage(undistorted_image_);
-
-                    ///TODO:Remove
-                    frame_reprojections.push_back(undistorted_image_);
+                        // pinhole reprojection
+                        cv::Mat undistorted_image_;
+                        cv::remap(
+                            reprojection.obslist_[i].image(),
+                            undistorted_image_,
+                            reprojection.map_x_,
+                            reprojection.map_y_,
+                            cv::INTER_LINEAR,
+                            cv::BORDER_CONSTANT);
+                        reprojection.obslist_[i].setImage(undistorted_image_);
                     }
                 }
-                ///TODO:Remove
-                reprojections_.push_back(frame_reprojections);
             }
         }
 
@@ -1087,7 +1094,7 @@ namespace aslam
             map_x_float_ = cv::Mat(resolution_out_, CV_32FC1);
             map_y_float_ = cv::Mat(resolution_out_, CV_32FC1);
 
-            // // Compute the remap maps
+            // Compute the remap maps
             for (size_t v = 0; v < reprojection.resolution_.coeff(0,0); ++v) {
                 for (size_t u = 0; u < reprojection.resolution_.coeff(1,0); ++u) {
                 xyz_idx_ = u+v*reprojection.resolution_.coeff(1,0);
@@ -1105,10 +1112,6 @@ namespace aslam
             
             reprojection.map_x_ = map_x_;
             reprojection.map_y_ = map_y_;
-
-            ///TODO: remove
-            maps_x_.push_back(map_x_);
-            maps_y_.push_back(map_y_);
         }
 
         template< typename C>
@@ -1116,7 +1119,8 @@ namespace aslam
         {
             for (auto &reprojection: reprojection_wrappers_ )
             {
-                if (reprojection.reproj_type_ == ReprojectionMode::pinhole || reprojection.reproj_type_ == ReprojectionMode::homography)
+                if (reprojection.reproj_type_ == ReprojectionMode::pinhole || 
+                    reprojection.reproj_type_ == ReprojectionMode::homography)
                 {
                     compute_remap(reprojection);
                 }
@@ -1149,30 +1153,31 @@ namespace aslam
         }
         
         template< typename C>
-        void TartanCalibWorker<C>::compute_xyz( aslam::cameras::ReprojectionWrapper<C>& reprojection)
+        void TartanCalibWorker<C>::compute_xyz(aslam::cameras::ReprojectionWrapper<C>& reprojection)
         {
-            num_points_ = reprojection.resolution_.coeff(0,0)*reprojection.resolution_.coeff(1,0);
-            xyz_.resize(3,num_points_);
+            num_points_ = reprojection.resolution_.coeff(0,0) * reprojection.resolution_.coeff(1,0);
+            xyz_.resize(3, num_points_);
             
             // homography first gets a pinhole, then computes a homography in that pinhole
-            if (reprojection.reproj_type_ == ReprojectionMode::pinhole || reprojection.reproj_type_ == ReprojectionMode::homography)
+            if (reprojection.reproj_type_ == ReprojectionMode::pinhole || 
+                reprojection.reproj_type_ == ReprojectionMode::homography)
             {
 
-                xyz_.row(0) = Eigen::Matrix<float, 1,Eigen::Dynamic>::LinSpaced(reprojection.resolution_.coeff(1,0),-1,1).matrix().replicate(1,reprojection.resolution_.coeff(0,0));
+                xyz_.row(0) = Eigen::Matrix<float, 1,Eigen::Dynamic>::LinSpaced(
+                    reprojection.resolution_.coeff(1,0),-1,1).matrix().replicate(1,reprojection.resolution_.coeff(0,0));
                 
-                yy_ = Eigen::Matrix<float, 1,Eigen::Dynamic>::LinSpaced(reprojection.resolution_.coeff(0,0),-1,1).matrix().replicate(reprojection.resolution_.coeff(1,0),1);
+                yy_ = Eigen::Matrix<float, 1,Eigen::Dynamic>::LinSpaced(
+                    reprojection.resolution_.coeff(0,0),-1,1).matrix().replicate(reprojection.resolution_.coeff(1,0),1);
                 yy_.resize(1,num_points_);
+                
                 xyz_.row(1) = yy_;
 
                 xyz_.row(0)*= tan(reprojection.fov_.coeff(0,0) / 2.0 / 180 * PI);
                 xyz_.row(1)*= tan(reprojection.fov_.coeff(1,0) / 2.0 / 180 * PI);
                 xyz_.row(2) = Eigen::Matrix<float, 1,Eigen::Dynamic>::Ones(1,num_points_);
                 compute_rotation(reprojection.pose_);
-                xyz_=rot_mat_*xyz_;
+                xyz_ = rot_mat_ * xyz_;
                 reprojection.xyz_ = xyz_;
-
-                ///TODO:remove 
-                xyzs_.push_back(xyz_);
             }
 
         }
@@ -1187,7 +1192,7 @@ namespace aslam
 
                 for (auto debug_mode_ : debug_modes_)
                 {
-                    if (debug_mode_==DebugMode::pointcloudprojection)
+                    if (debug_mode_ == DebugMode::pointcloudprojection)
                     {
                         cv::viz::Viz3d myWindow("Coordinate Frame");
                         myWindow.showWidget("Coordinate Widget", cv::viz::WCoordinateSystem());
@@ -1198,9 +1203,13 @@ namespace aslam
                             pts3d.empty();
                             if (reprojection.xyz_.cols() > 0)
                             {
-                                for (int i = 0; i<reprojection.xyz_.cols() ; i ++)
+                                for (int i = 0; i < reprojection.xyz_.cols(); i++)
                                 {
-                                    pts3d.push_back(cv::Point3f(reprojection.xyz_.coeff(0,i),reprojection.xyz_.coeff(1,i),reprojection.xyz_.coeff(2,i)));
+                                    pts3d.push_back(cv::Point3f(
+                                        reprojection.xyz_.coeff(0,i),
+                                        reprojection.xyz_.coeff(1,i),
+                                        reprojection.xyz_.coeff(2,i)
+                                    ));
                                 }
                                 cv::viz::WCloud cloud_widget1(pts3d,cv::viz::Color::green());
                                 myWindow.showWidget("cloud 1", cloud_widget1);

@@ -231,6 +231,7 @@ void exportGridCalibration() {
       .def("findTarget", &findTarget2)
       .def("findTargetNoTransformation", &findTargetNoTransformation1)
       .def("findTargetNoTransformation", &findTargetNoTransformation2)
+      .def("setDeltilleFp", &GridDetector::setDeltilleFp)
       .def(init<boost::shared_ptr<CameraGeometryBase>, GridCalibrationTargetBase::Ptr>("GridDetector::GridDetector( boost::shared_ptr<CameraGeometryBase> geometry, GridCalibrationTargetBase::Ptr target)"))
       .def(init<>("Do not use the default constructor. It is only necessary for the pickle interface"))
       .def_pickle(sm::python::pickle_suite<GridDetector>());

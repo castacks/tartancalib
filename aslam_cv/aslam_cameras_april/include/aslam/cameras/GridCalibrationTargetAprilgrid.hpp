@@ -93,6 +93,13 @@ class GridCalibrationTargetAprilgrid : public GridCalibrationTargetBase {
                           Eigen::MatrixXd & outImagePoints,
                           std::vector<bool> &outCornerObserved) const;
 
+  /// \brief extract the calibration target points from an image and write to an observation (Deltille)
+  bool computeObservationDeltille(const cv::Mat & image,
+                          Eigen::MatrixXd & outImagePoints,
+                          std::vector<bool> &outCornerObserved,
+                          std::string deltilleFp) const;
+
+
   AprilgridOptions options(){return _options;}
 
   /// \brief size of a tag [m]

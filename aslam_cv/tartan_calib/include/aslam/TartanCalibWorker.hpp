@@ -78,12 +78,10 @@ namespace aslam
         pose_(pose),
         resolution_(resolution),
         reproj_type_(reproj_type)
-        {
-
-        };
+        {};
       
         std::vector<aslam::cameras::GridCalibrationTargetObservation> obslist_;
-        Eigen::MatrixXd fov_,pose_,resolution_;
+        Eigen::MatrixXd fov_, pose_, resolution_;
         cv::Mat map_x_, map_y_;
         std::vector<cv::Mat> homography_;
         ReprojectionMode reproj_type_;
@@ -91,7 +89,7 @@ namespace aslam
     };
 
 
-    template< typename C>
+    template <typename C>
     class TartanCalibWorker:
       public boost::enable_shared_from_this<TartanCalibWorker<C>>
     {
@@ -141,12 +139,8 @@ namespace aslam
               camera_->getParameters(cam_params,true,true,true);
               num_frames_ = obslist.size();
               num_views_ = fovs.cols();
-              new_obslist_ = obslist_; // eventually we're outputting this variable, but we initialize it with the right observations (i.e., images and time stamps)
-              for (auto obs : new_obslist_)
-              {
-                obs.getCornersIdx(outCornerIdx_);
-              }
-                        
+              new_obslist_ = obslist_; // new_obslist_ = output; here we initialize it with right observations (i.e., images and time stamps)
+                       
               // Export dataset to a binary usable in generic camera model referred to in "Why having 10000 parameters..." paper.
               // This export corresponds to BEFORE TartanCalib enhancements.
               // if (!export_dataset_fp.empty())
@@ -159,7 +153,13 @@ namespace aslam
               // loading reprojectionwrapper classes
               for (int i = 0; i < num_views_; i++)
               {
-                reprojection_wrappers_.push_back(ReprojectionWrapper<C>(obslist_,fovs.col(i),poses.col(i),resolutions.col(i),StringToReprojectionMode(reproj_types[i])));
+                reprojection_wrappers_.push_back(ReprojectionWrapper<C>(
+                  obslist_,
+                  fovs.col(i),
+                  poses.col(i),
+                  resolutions.col(i),
+                  StringToReprojectionMode(reproj_types[i])
+                ));
               }
 
               for (auto debug_mode : debug_modes)
@@ -170,9 +170,9 @@ namespace aslam
               for (auto obs: obslist_)
               {
                 obs.getCornersIdx(outCornerIdx_);
-                num_corners_start+=outCornerIdx_.size();
+                num_corners_start += outCornerIdx_.size();
               }
-              SM_INFO_STREAM("Started tartan calib with "<<num_corners_start<<" points.");
+              SM_INFO_STREAM("Started TartanCalib with " << num_corners_start << " points.");
             
             };
             TartanCalibWorker(){};
@@ -276,7 +276,7 @@ namespace aslam
             Eigen::Matrix<float,3,3> rot_mat_,rot_mat_x_,rot_mat_z_;
             Eigen::Matrix<float, Eigen::Dynamic, Eigen::Dynamic> xx_,yy_; //vector with x and y values in the global
             Eigen::MatrixXd fovs_, poses_, resolutions_;
-            std::vector<Eigen::Matrix<float, 3, Eigen::Dynamic>> xyzs_;
+            // std::vector<Eigen::Matrix<float, 3, Eigen::Dynamic>> xyzs_;
             
             std::vector<unsigned int> outCornerIdx_;
             aslam::cameras::GridCalibrationTargetObservation obs_;
@@ -295,9 +295,7 @@ namespace aslam
             // map parameters
             cv::Size resolution_out_;
             cv::Mat map_x_float_,map_y_float_;
-            std::vector<cv::Mat> maps_x_, maps_y_;
             
-            std::vector<std::vector<cv::Mat>> reprojections_;
             std::vector<aslam::cameras::GridCalibrationTargetObservation> new_obslist_;
             aslam::cameras::GridDetector gd_;
             std::vector<aslam::cameras::GridCalibrationTargetObservation> output_obslist_;

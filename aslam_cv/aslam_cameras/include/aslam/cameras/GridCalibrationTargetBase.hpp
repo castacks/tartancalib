@@ -84,6 +84,17 @@ class GridCalibrationTargetBase {
     return false;
   };
 
+  /// \brief extract the calibration target points from an image
+  ///        outCornerObserved flags wheter the corresponding point
+  ///        in outImagePoints was observed
+  virtual bool computeObservationDeltille(const cv::Mat & /*image*/,
+                                  Eigen::MatrixXd & /*outImagePoints*/,
+                                  std::vector<bool> & /*outCornerObserved*/,
+                                  std::string deltilleFp) const
+  {
+    return false;
+  };
+
   /// \brief return pointer to the i-th grid point in target frame
   double * getPointDataPointer(size_t i);
 

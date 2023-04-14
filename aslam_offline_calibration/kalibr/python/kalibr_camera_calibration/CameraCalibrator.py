@@ -32,7 +32,7 @@ class OptimizationDiverged(Exception):
 class CameraGeometry(object):
     def __init__(self, cameraModel, targetConfig, dataset, geometry=None, verbose=False):
         self.dataset = dataset
-        
+
         self.model = cameraModel
         if geometry is None:
             self.geometry = cameraModel.geometry()
@@ -104,8 +104,7 @@ class TargetDetector(object):
             self.grid = acv.GridCalibrationTargetCirclegrid(targetParams['targetRows'],
                                                            targetParams['targetCols'], 
                                                            targetParams['spacingMeters'], 
-                                                           options)
-         
+                                                           options)         
         elif targetType == 'aprilgrid':
             options = acv_april.AprilgridOptions()
             #enforce more than one row --> pnp solution can be bad if all points are almost on a line...
@@ -116,7 +115,7 @@ class TargetDetector(object):
             self.grid = acv_april.GridCalibrationTargetAprilgrid(targetParams['tagRows'], 
                                                                  targetParams['tagCols'], 
                                                                  targetParams['tagSize'], 
-                                                                 targetParams['tagSpacing'], 
+                                                                 targetParams['tagSpacing'],
                                                                  options)
         else:
             RuntimeError('Unknown calibration target type!')
