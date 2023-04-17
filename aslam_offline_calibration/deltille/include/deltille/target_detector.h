@@ -134,8 +134,11 @@ public:
 
   /**
    */
-  void run(const cv::Mat &src, CornerVector &corners,
-           cv::Mat *debug_image = nullptr) {
+  void run(
+    const cv::Mat &src,
+    CornerVector &corners,
+    std::vector<orp::calibration::BoardObservation> &boards,
+    cv::Mat *debug_image = nullptr) {
     using namespace orp::calibration;
 
     if (debug_image) {
@@ -145,7 +148,7 @@ public:
 
     const cv::Size board_size(_indexer.chessboard_col, _indexer.chessboard_row);
 
-    std::vector<orp::calibration::BoardObservation> boards;
+    // std::vector<orp::calibration::BoardObservation> boards;
     if (is_triangular()) {
       FindBoards<MonkeySaddlePointSpherical>(src, board_size, boards);
       _indexer.fixTriangleBoards(src, boards);
@@ -161,7 +164,6 @@ public:
         const auto &c = b.corner_locations[i];
         corners.emplace_back(c.x, c.y, b.board_id, int(i), b.indexed);
       }
-      std::cout << std::endl;
     }
 
     if (debug_image) {

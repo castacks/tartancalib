@@ -251,7 +251,7 @@ void readBoardDefinitions(std::istream &in, std::vector<BoardDefinition> &defs,
         if (detectors.count(b.family) == 0) {
           std::shared_ptr<TagFamily> det = std::make_shared<TagFamily>(
               tagFamilyNameToCodes(b.family), b.border_bits);
-          printf("Loading detector for tag family: >%s<\n", b.family.c_str());
+          // printf("Loading detector for tag family: >%s<\n", b.family.c_str());
           auto detector = detectors.insert(std::make_pair(b.family, det));
           if (detector.second)
             b.detector = det;
