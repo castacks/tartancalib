@@ -29,7 +29,7 @@ RUN apt-get update \
 # https://github.com/ethz-asl/kalibr/wiki/installation
 RUN apt-get update \
  && apt-get install -y --no-install-recommends \
-	git \
+    git \
     wget \
     autoconf \
     automake \
@@ -37,26 +37,26 @@ RUN apt-get update \
     vim \
     htop \
     tmux \
-	python3-dev \
+    python3-dev \
     python-pip \
     python-scipy \
     python-matplotlib \
-	ipython \
+    ipython \
     python-wxgtk4.0 \
     python-tk \
     python-igraph \
-	libeigen3-dev \
+    libeigen3-dev \
     libboost-all-dev \
     libsuitesparse-dev \
-	doxygen \
-	libopencv-dev \
-	libpoco-dev \
+    doxygen \
+    libopencv-dev \
+    libpoco-dev \
     libtbb-dev \
     libblas-dev \
     liblapack-dev \
     libv4l-dev \
     libglew-dev\
-	python-catkin-tools \
+    python-catkin-tools \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
@@ -83,6 +83,6 @@ RUN	cd $WORKSPACE \
 # This will allow for using the manual focal length if it fails to init
 # https://github.com/ethz-asl/kalibr/pull/346
 ENTRYPOINT export KALIBR_MANUAL_FOCAL_LENGTH_INIT=1 && \
-	# /bin/bash -c "source \"$WORKSPACE/devel/setup.bash\"" && \ 
-	cd $WORKSPACE && \
-	/bin/bash
+    # /bin/bash -c "source \"$WORKSPACE/devel/setup.bash\"" && \ 
+    cd $WORKSPACE && \
+    /bin/bash
