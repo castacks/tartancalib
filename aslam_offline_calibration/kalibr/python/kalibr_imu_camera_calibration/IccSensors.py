@@ -683,7 +683,7 @@ class IccImu(object):
         if mSigma > 0.0:
             mest = aopt.HuberMEstimator(mSigma)
         else:
-            mest = aopt.NoMEstimator()
+            mest = aopt.NoMEstimator(1.0)
             
         for im in self.imuData:
             tk = im.stamp.toSec() + self.timeOffset
@@ -725,7 +725,7 @@ class IccImu(object):
         if mSigma > 0.0:
             mest = aopt.HuberMEstimator(mSigma)
         else:
-            mest = aopt.NoMEstimator()
+            mest = aopt.NoMEstimator(1.0)
             
         for im in self.imuData:
             tk = im.stamp.toSec() + self.timeOffset
@@ -983,7 +983,7 @@ class IccScaledMisalignedImu(IccImu):
         if mSigma > 0.0:
             mest = aopt.HuberMEstimator(mSigma)
         else:
-            mest = aopt.NoMEstimator()
+            mest = aopt.NoMEstimator(1.0)
             
         for im in self.imuData:
             tk = im.stamp.toSec() + self.timeOffset
@@ -1026,7 +1026,7 @@ class IccScaledMisalignedImu(IccImu):
         if mSigma > 0.0:
             mest = aopt.HuberMEstimator(mSigma)
         else:
-            mest = aopt.NoMEstimator()
+            mest = aopt.NoMEstimator(1.0)
             
         for im in self.imuData:
             tk = im.stamp.toSec() + self.timeOffset
@@ -1134,7 +1134,7 @@ class IccScaledMisalignedSizeEffectImu(IccScaledMisalignedImu):
         if mSigma > 0.0:
             mest = aopt.HuberMEstimator(mSigma)
         else:
-            mest = aopt.NoMEstimator()
+            mest = aopt.NoMEstimator(1.0)
             
         for im in self.imuData:
             tk = im.stamp.toSec() + self.timeOffset

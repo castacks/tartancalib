@@ -420,7 +420,7 @@ namespace aslam {
         		_bufferLeft = _spline->spline().segmentIndex(initTime - bufferTmin);
 
         	// take the full time span of the time segments
-			_bufferTmax = _spline->spline().timeInterval(_bufferRight).second;
+			_bufferTmax = _spline->spline().timeInterval(_bufferRight).second * 10;
 			_bufferTmin = _spline->spline().timeInterval(_bufferLeft).first;
 			// store the local design variable indices over all segments:
 			// the time in the center of the segment is taken to avoid numerical issues. maybe this is redundant
